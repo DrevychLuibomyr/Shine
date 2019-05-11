@@ -1,0 +1,32 @@
+language: swift
+osx_image: xcode10.1
+
+branches:
+  only:
+    - master
+    - /v\d+\.\d+[a-z]/
+env:
+  - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
+before_install:
+  - rvm install ruby-2.2.2
+  - gem install cocoapods
+  - gem install xcpretty -N
+  - brew update
+script:
+  - set -o pipefail
+  - xcodebuild -workspace Sunset_Sunrise.xcworkspace -scheme Sunset_Sunrise -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - git config --local user.name "DrevychLuibomyr"
+  - git config --local user.email "LDrevych@gmail.com"
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
+deploy:
+  provider: releases
+  tag_name: $TRAVIS_TAG
+  target_commitish: $TRAVIS_COMMIT
+  name: $TRAVIS_TAG
+  api_key: '$GITKEY'
+  git : Sunset_Sunrise.xcodeproj
+  skip_cleanup: true
+  on:
+     tags: true
+     all_branches: true

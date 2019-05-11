@@ -19,6 +19,7 @@ class NoLocationViewController: UIViewController {
         button.setTitle(ApplicationConstants.settingButton, for: .normal)
     }
 
+    //MARK: Private
     @IBAction func showAlert(_ sender: UIButton) {
         viewModel.openSettings(owner: self)
     }
