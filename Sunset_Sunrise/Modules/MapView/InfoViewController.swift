@@ -23,7 +23,7 @@ final class InfoViewController: UIViewController {
         return UIScreen.main.bounds.height - 150
     }
     
-    //MARK: Life-Cycle 
+    //MARK: Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(InfoViewController.panGesture))
@@ -45,6 +45,7 @@ final class InfoViewController: UIViewController {
         })
     }
     
+    //MARK: Public
     @objc func panGesture(_ recognizer: UIPanGestureRecognizer) {
         
         let translation = recognizer.translation(in: self.view)
