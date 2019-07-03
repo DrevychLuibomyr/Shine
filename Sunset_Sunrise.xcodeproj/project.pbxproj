@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		349C54ABBA5604DE8BBD52C8 /* Pods_Sunset_Sunrise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8791EB447AA57730B879ABC /* Pods_Sunset_Sunrise.framework */; };
 		4C1F0A0F225221C7004A3A4E /* SunsetSunriseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F0A0E225221C7004A3A4E /* SunsetSunriseModel.swift */; };
 		4C1F0A1422522972004A3A4E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F0A1322522972004A3A4E /* NetworkManager.swift */; };
 		4C4D19932286FC02006F8EEC /* NoLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4D19922286FC02006F8EEC /* NoLocationViewController.swift */; };
@@ -31,7 +32,8 @@
 		4CE1ADF42252AA51005AC27E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1ADF32252AA51005AC27E /* MapViewModel.swift */; };
 		4CE1ADFB2252BF90005AC27E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1ADFA2252BF90005AC27E /* InfoViewController.swift */; };
 		4CE1ADFE2252BFD4005AC27E /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1ADFD2252BFD4005AC27E /* InfoViewController.xib */; };
-		A3A3CCF6B445963CBF6CB71D /* Pods_Sunset_Sunrise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3523583179D93DF82828C /* Pods_Sunset_Sunrise.framework */; };
+		707EE5FE22CCF10000EC5ACF /* Devices.plist in Resources */ = {isa = PBXBuildFile; fileRef = 707EE5FC22CCF0FF00EC5ACF /* Devices.plist */; };
+		707EE5FF22CCF10000EC5ACF /* UIDevice+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1DC3DC4C5B9C16BCFE2DAE /* Pods-Sunset_Sunrise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.debug.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.debug.xcconfig"; sourceTree = "<group>"; };
 		4C1F0A0E225221C7004A3A4E /* SunsetSunriseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetSunriseModel.swift; sourceTree = "<group>"; };
 		4C1F0A1322522972004A3A4E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4C4D19922286FC02006F8EEC /* NoLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLocationViewController.swift; sourceTree = "<group>"; };
@@ -82,9 +85,10 @@
 		4CE1ADF32252AA51005AC27E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		4CE1ADFA2252BF90005AC27E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4CE1ADFD2252BFD4005AC27E /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
-		50E3523583179D93DF82828C /* Pods_Sunset_Sunrise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sunset_Sunrise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B34BE20B3C7DC430B35261D9 /* Pods-Sunset_Sunrise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.debug.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.debug.xcconfig"; sourceTree = "<group>"; };
-		F3B6A3184F57A0AB6F123F63 /* Pods-Sunset_Sunrise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.release.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.release.xcconfig"; sourceTree = "<group>"; };
+		707EE5FC22CCF0FF00EC5ACF /* Devices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Devices.plist; sourceTree = "<group>"; };
+		707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Model.swift"; sourceTree = "<group>"; };
+		B8791EB447AA57730B879ABC /* Pods_Sunset_Sunrise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sunset_Sunrise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1B7943C458C041315CADD7 /* Pods-Sunset_Sunrise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.release.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3A3CCF6B445963CBF6CB71D /* Pods_Sunset_Sunrise.framework in Frameworks */,
+				349C54ABBA5604DE8BBD52C8 /* Pods_Sunset_Sunrise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +142,7 @@
 				4C7584D4224E843400DA2195 /* Sunset_SunriseUITests */,
 				4C7584B3224E843100DA2195 /* Products */,
 				6714792A265191EB50DA6726 /* Pods */,
-				65E3A9E9E835D48F2CDC26F2 /* Frameworks */,
+				7A050A0E996E0372AD1CFDBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +159,7 @@
 		4C7584B4224E843100DA2195 /* Sunset_Sunrise */ = {
 			isa = PBXGroup;
 			children = (
+				707EE5FB22CCF0FF00EC5ACF /* Device */,
 				4C4D19982286FDCC006F8EEC /* BaseViewModel */,
 				4CBFFB1F224F9F4A000F2B25 /* Screens */,
 				4CBFFB15224F902C000F2B25 /* View */,
@@ -279,21 +284,30 @@
 			path = MapView;
 			sourceTree = "<group>";
 		};
-		65E3A9E9E835D48F2CDC26F2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				50E3523583179D93DF82828C /* Pods_Sunset_Sunrise.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		6714792A265191EB50DA6726 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B34BE20B3C7DC430B35261D9 /* Pods-Sunset_Sunrise.debug.xcconfig */,
-				F3B6A3184F57A0AB6F123F63 /* Pods-Sunset_Sunrise.release.xcconfig */,
+				0D1DC3DC4C5B9C16BCFE2DAE /* Pods-Sunset_Sunrise.debug.xcconfig */,
+				FF1B7943C458C041315CADD7 /* Pods-Sunset_Sunrise.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		707EE5FB22CCF0FF00EC5ACF /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				707EE5FC22CCF0FF00EC5ACF /* Devices.plist */,
+				707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		7A050A0E996E0372AD1CFDBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8791EB447AA57730B879ABC /* Pods_Sunset_Sunrise.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,12 +317,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C7584DA224E843400DA2195 /* Build configuration list for PBXNativeTarget "Sunset_Sunrise" */;
 			buildPhases = (
-				293286DA37EBEFC85BD4E088 /* [CP] Check Pods Manifest.lock */,
+				6BBDD457D44FC98C30C21487 /* [CP] Check Pods Manifest.lock */,
 				4C7584AE224E843100DA2195 /* Sources */,
 				4C7584AF224E843100DA2195 /* Frameworks */,
 				4C7584B0224E843100DA2195 /* Resources */,
-				633EC993FE2F14A7A3A58B6A /* [CP] Embed Pods Frameworks */,
-				E4CB77A5EDF85B3355FCC975 /* [CP] Copy Pods Resources */,
+				DA334982EEFA40B9F8BA561D /* [CP] Embed Pods Frameworks */,
+				4CB6AEE0014F728CA299B7D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -410,6 +424,7 @@
 				4CE1ADEF2252A655005AC27E /* GoogleMaps.storyboard in Resources */,
 				4C7584BD224E843400DA2195 /* Assets.xcassets in Resources */,
 				4C7584BB224E843100DA2195 /* Main.storyboard in Resources */,
+				707EE5FE22CCF10000EC5ACF /* Devices.plist in Resources */,
 				4C4D19972286FC8A006F8EEC /* NoLocation.storyboard in Resources */,
 				4CE1ADFE2252BFD4005AC27E /* InfoViewController.xib in Resources */,
 			);
@@ -432,7 +447,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		293286DA37EBEFC85BD4E088 /* [CP] Check Pods Manifest.lock */ = {
+		4CB6AEE0014F728CA299B7D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BBDD457D44FC98C30C21487 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -454,50 +486,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		633EC993FE2F14A7A3A58B6A /* [CP] Embed Pods Frameworks */ = {
+		DA334982EEFA40B9F8BA561D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E4CB77A5EDF85B3355FCC975 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -520,6 +523,7 @@
 				4CDF5724224EA06D00C54CCD /* MainViewModel.swift in Sources */,
 				4C4D19932286FC02006F8EEC /* NoLocationViewController.swift in Sources */,
 				4CE1ADF22252A79D005AC27E /* MapViewController.swift in Sources */,
+				707EE5FF22CCF10000EC5ACF /* UIDevice+Model.swift in Sources */,
 				4CE1ADFB2252BF90005AC27E /* InfoViewController.swift in Sources */,
 				4C4D19952286FC0E006F8EEC /* NoLocationViewModel.swift in Sources */,
 				4CE1ADF42252AA51005AC27E /* MapViewModel.swift in Sources */,
@@ -695,12 +699,12 @@
 		};
 		4C7584DB224E843400DA2195 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B34BE20B3C7DC430B35261D9 /* Pods-Sunset_Sunrise.debug.xcconfig */;
+			baseConfigurationReference = 0D1DC3DC4C5B9C16BCFE2DAE /* Pods-Sunset_Sunrise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65ZCMBX653;
+				DEVELOPMENT_TEAM = 2AUY752962;
 				INFOPLIST_FILE = Sunset_Sunrise/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -717,12 +721,12 @@
 		};
 		4C7584DC224E843400DA2195 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3B6A3184F57A0AB6F123F63 /* Pods-Sunset_Sunrise.release.xcconfig */;
+			baseConfigurationReference = FF1B7943C458C041315CADD7 /* Pods-Sunset_Sunrise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65ZCMBX653;
+				DEVELOPMENT_TEAM = 2AUY752962;
 				INFOPLIST_FILE = Sunset_Sunrise/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

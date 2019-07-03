@@ -8,36 +8,42 @@
 
 import UIKit
 
-enum StoryboardId: String {
-    case Main
-    case UserScenario
-    case GoogleMaps
-    case NoLocation
+//MARK: UIStoryboard+InstantiateViewController
+extension UIStoryboard {
+    func instantiateViewController<T: UIViewController>(withType type: T.Type) -> T {
+        let identifier = String(describing: T.self)
+        guard let instantiateViewController = instantiateViewController(withIdentifier: identifier) as? T else {
+            fatalError("Error with founding \(T.self)")
+        }
+        return instantiateViewController
+    }
 }
 
-protocol StoryboardInitializing {}
-
-extension UIViewController: StoryboardInitializing {}
-
-//MARK: UiViewController+ClassName
-extension UIViewController {
+//MARK: UIStoryboard+Names
+extension UIStoryboard {
     
-    static func className() -> String {
-        return String(describing: self)
+    private enum Names {
+        static let main = UIStoryboard(name: "Main", bundle: nil)
+        static let google = UIStoryboard(name: "GoogleMaps", bundle: nil)
+        static let noLocation = UIStoryboard(name: "NoLocation", bundle: nil)
     }
-}
-
-//MARK: StoryboardInitializing+InstantiateFromStoryboardId
-extension StoryboardInitializing where Self: UIViewController {
-    static func instantiateFromStoryboardId(_ storyboardId: StoryboardId) -> Self {
-        let vcIdentifier = self.className()
-        
-        let storyboard = UIStoryboard(name: storyboardId.rawValue, bundle: nil) as UIStoryboard?
-        assert(storyboard != nil, "Storyboard name is incorrect")
-        
-        let vc = storyboard?.instantiateViewController(withIdentifier: vcIdentifier)
-        assert(vc != nil, "ViewController id name is incorrect")
-        
-        return vc as! Self
+    
+    enum Main {
+        static var mainVC: MainViewController {
+            return Names.main.instantiateViewController(withType: MainViewController.self)
+        }
     }
+    
+    enum GoogleMaps {
+        static var googleMapsVC: MapViewController {
+            return Names.google.instantiateViewController(withType: MapViewController.self)
+        }
+    }
+    
+    enum NoLocation {
+        static var noLocationVC: NoLocationViewController {
+            return Names.noLocation.instantiateViewController(withType: NoLocationViewController.self)
+        }
+    }
+    
 }

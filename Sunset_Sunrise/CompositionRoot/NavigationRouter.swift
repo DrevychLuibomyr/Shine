@@ -25,13 +25,13 @@ final class NavigationRouter {
     }
     
     public func showMainViewController() {
-        let mainViewController = MainViewController.instantiateFromStoryboardId(.Main)
+        let mainViewController = UIStoryboard.Main.mainVC
         mainViewController.viewModel = MainViewModel()
         navigationController.viewControllers = [mainViewController]
     }
     
     public func showGoogleMaps(previous: UIViewController, animated: Bool) {
-        let mapViewController = MapViewController.instantiateFromStoryboardId(.GoogleMaps)
+        let mapViewController = UIStoryboard.GoogleMaps.googleMapsVC
         let network = NetworkManager()
         let location = LocationManager()
         mapViewController.viewModel = MapViewModel(netwrok: network, location: location)
@@ -39,9 +39,9 @@ final class NavigationRouter {
     }
     
     public func showNoLocationViewController(previous: UIViewController, with animation: Bool) {
-        let nolocationViewController = NoLocationViewController.instantiateFromStoryboardId(.NoLocation)
+        let nolocationViewController = UIStoryboard.NoLocation.noLocationVC
         nolocationViewController.viewModel = NoLocationViewModel()
-       navigationMove(from: previous, to: nolocationViewController, withTransition: .present, with: animation)
+        navigationMove(from: previous, to: nolocationViewController, withTransition: .present, with: animation)
     }
     
     public func dismiss(with animation: Bool, complition: (()->())? = nil) {
