@@ -34,6 +34,7 @@
 		4CE1ADFE2252BFD4005AC27E /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1ADFD2252BFD4005AC27E /* InfoViewController.xib */; };
 		707EE5FE22CCF10000EC5ACF /* Devices.plist in Resources */ = {isa = PBXBuildFile; fileRef = 707EE5FC22CCF0FF00EC5ACF /* Devices.plist */; };
 		707EE5FF22CCF10000EC5ACF /* UIDevice+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */; };
+		707EE60122CCF77500EC5ACF /* MailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707EE60022CCF77500EC5ACF /* MailManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		4CE1ADFD2252BFD4005AC27E /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		707EE5FC22CCF0FF00EC5ACF /* Devices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Devices.plist; sourceTree = "<group>"; };
 		707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Model.swift"; sourceTree = "<group>"; };
+		707EE60022CCF77500EC5ACF /* MailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailManager.swift; sourceTree = "<group>"; };
 		B8791EB447AA57730B879ABC /* Pods_Sunset_Sunrise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sunset_Sunrise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1B7943C458C041315CADD7 /* Pods-Sunset_Sunrise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.release.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +254,7 @@
 			children = (
 				4CDF571F224E93A600C54CCD /* LocationManager.swift */,
 				4C1F0A1322522972004A3A4E /* NetworkManager.swift */,
+				707EE60022CCF77500EC5ACF /* MailManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				707EE60122CCF77500EC5ACF /* MailManager.swift in Sources */,
 				4CBFFB17224F9049000F2B25 /* RoundButton.swift in Sources */,
 				4CDF5726224EA09700C54CCD /* MainViewController.swift in Sources */,
 				4CDF5728224EA0B900C54CCD /* NavigationRouter.swift in Sources */,

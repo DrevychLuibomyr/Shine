@@ -11,7 +11,6 @@ import CoreLocation
 
 final class MainViewController: UIViewController {
     
-    @IBOutlet private weak var welcomeLabel: UILabel!
     @IBOutlet private weak var googlePlaceScenarioButton: UIButton!
     @IBOutlet private weak var exitButton: UIButton!
     
@@ -20,7 +19,6 @@ final class MainViewController: UIViewController {
     //MARK: Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = ApplicationConstants.welcomeWord
         exitButton.setTitle(ApplicationConstants.exit, for: .normal)
         googlePlaceScenarioButton.setTitle(ApplicationConstants.googleMaps, for: .normal)
     }
@@ -37,6 +35,10 @@ final class MainViewController: UIViewController {
     
     @IBAction private func exitApplication(_ sender: UIButton) {
         viewModel.exitFromApplication()
+    }
+    
+    @IBAction private func didTapOnSettigs(_ sender: UIButton) {
+        
     }
     
 }

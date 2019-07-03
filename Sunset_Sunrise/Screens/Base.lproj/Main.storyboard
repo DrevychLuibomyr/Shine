@@ -21,16 +21,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-Qj-ZTE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="701"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="789-sP-jOq">
-                                <rect key="frame" x="42" y="119" width="291" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="H36-gl-3PA"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" id="KP7-Um-n5l"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDD-xe-gFr" customClass="RoundButton" customModule="Sunset_Sunrise" customModuleProvider="target">
                                 <rect key="frame" x="84" y="318.5" width="200" height="40"/>
                                 <constraints>
@@ -68,20 +58,23 @@
                                     <action selector="exitApplication:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Pe-5k-gEA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fU-yW-VSR">
+                                <rect key="frame" x="292" y="61" width="48" height="48"/>
+                                <state key="normal" image="Setting"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9zC-B4-ceM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="05C-lv-RQF"/>
                             <constraint firstItem="r4f-Qj-ZTE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2nd-c3-MAk"/>
-                            <constraint firstItem="789-sP-jOq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="Dj8-79-Qni"/>
                             <constraint firstItem="r4f-Qj-ZTE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HM7-DY-ZSz"/>
                             <constraint firstItem="yDD-xe-gFr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-5" id="KJc-pI-7ja"/>
                             <constraint firstItem="yDD-xe-gFr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-3.5" id="O5s-lk-8HY"/>
                             <constraint firstItem="9zC-B4-ceM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q3y-PN-qYk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="789-sP-jOq" secondAttribute="trailing" constant="42" id="Vkz-Mq-aO3"/>
+                            <constraint firstItem="2fU-yW-VSR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="Suw-ru-a9w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r4f-Qj-ZTE" secondAttribute="bottom" constant="-34" id="pTo-WG-moC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9zC-B4-ceM" secondAttribute="bottom" id="qAQ-c4-4J3"/>
-                            <constraint firstItem="789-sP-jOq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="99" id="vMB-yA-dJr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2fU-yW-VSR" secondAttribute="trailing" constant="35" id="wEZ-xn-lQy"/>
                             <constraint firstItem="r4f-Qj-ZTE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yBc-3T-hb6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -89,15 +82,15 @@
                     <connections>
                         <outlet property="exitButton" destination="9zC-B4-ceM" id="Yja-vH-gkx"/>
                         <outlet property="googlePlaceScenarioButton" destination="yDD-xe-gFr" id="T3Z-rF-49n"/>
-                        <outlet property="welcomeLabel" destination="789-sP-jOq" id="lTG-0t-Lfo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="25.123152709359609"/>
+            <point key="canvasLocation" x="52" y="24.7376311844078"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Setting" width="48" height="48"/>
         <image name="background" width="375" height="667"/>
     </resources>
 </document>

@@ -10,7 +10,6 @@ import Foundation
 
 struct ApplicationConstants {
     static let googlePlaceApiKey = "AIzaSyB2WZnPPZKk93zvB1xmWt_iDVwXAy6ae4k"
-    static let welcomeWord = "Sincerely glad that you went to check the work done by me, I will look forward to answering my work and your impressions."
     static let exit = "Exit"
     static let googleMaps = "Let's have fun"
     static let buttonAlertTitle = "Ok"
