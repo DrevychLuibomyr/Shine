@@ -19,9 +19,10 @@ final class MailManager: NSObject {
         self.viewController = controller
     }
     
-    public func sendMail() {
+    public func sendMail(from: UIViewController) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
+            mail.setSubject("Feedback Form")
             mail.delegate = self
             mail.mailComposeDelegate = self
             mail.setMessageBody(self.deviceInfo(), isHTML: false)

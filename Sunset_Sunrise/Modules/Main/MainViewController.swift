@@ -15,6 +15,7 @@ final class MainViewController: UIViewController {
     @IBOutlet private weak var exitButton: UIButton!
     
     var viewModel: MainViewModel!
+    var coordinator: MainViewControllerCoordinator!
     
     //MARK: Life-Cycle
     override func viewDidLoad() {
@@ -30,7 +31,7 @@ final class MainViewController: UIViewController {
     
     //MARK: Private
     @IBAction private func showGoogleMapsScenario(_ sender: UIButton) {
-        viewModel.showGoogleMaps(viewController: self, animated: true)
+        coordinator.showMap()
     }
     
     @IBAction private func exitApplication(_ sender: UIButton) {

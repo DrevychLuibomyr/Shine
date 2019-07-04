@@ -12,10 +12,6 @@ import CoreLocation
 
 final class MainViewModel: BaseViewModel {
     
-    func showGoogleMaps(viewController: UIViewController, animated: Bool) {
-        appDelegate.navigationRouter?.showGoogleMaps(previous: viewController, animated: animated)
-    }
-    
     func exitFromApplication() {
         let application = UIApplication.shared
         UIControl().sendAction(#selector(URLSessionTask.suspend), to: application, for: nil)

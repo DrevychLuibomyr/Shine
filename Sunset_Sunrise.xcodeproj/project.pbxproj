@@ -26,12 +26,15 @@
 		4CDF5720224E93A600C54CCD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF571F224E93A600C54CCD /* LocationManager.swift */; };
 		4CDF5724224EA06D00C54CCD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5723224EA06D00C54CCD /* MainViewModel.swift */; };
 		4CDF5726224EA09700C54CCD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5725224EA09700C54CCD /* MainViewController.swift */; };
-		4CDF5728224EA0B900C54CCD /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5727224EA0B900C54CCD /* NavigationRouter.swift */; };
 		4CE1ADEF2252A655005AC27E /* GoogleMaps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1ADEE2252A655005AC27E /* GoogleMaps.storyboard */; };
 		4CE1ADF22252A79D005AC27E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1ADF12252A79D005AC27E /* MapViewController.swift */; };
 		4CE1ADF42252AA51005AC27E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1ADF32252AA51005AC27E /* MapViewModel.swift */; };
 		4CE1ADFB2252BF90005AC27E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1ADFA2252BF90005AC27E /* InfoViewController.swift */; };
 		4CE1ADFE2252BFD4005AC27E /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1ADFD2252BFD4005AC27E /* InfoViewController.xib */; };
+		703340E222CE3EBC001BCB4C /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703340E122CE3EBC001BCB4C /* ApplicationCoordinator.swift */; };
+		703340E422CE4093001BCB4C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703340E322CE4093001BCB4C /* Router.swift */; };
+		703340EC22CE45EF001BCB4C /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703340EB22CE45EF001BCB4C /* DependencyContainer.swift */; };
+		703340EE22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703340ED22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift */; };
 		707EE5FE22CCF10000EC5ACF /* Devices.plist in Resources */ = {isa = PBXBuildFile; fileRef = 707EE5FC22CCF0FF00EC5ACF /* Devices.plist */; };
 		707EE5FF22CCF10000EC5ACF /* UIDevice+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */; };
 		707EE60122CCF77500EC5ACF /* MailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707EE60022CCF77500EC5ACF /* MailManager.swift */; };
@@ -80,12 +83,15 @@
 		4CDF571F224E93A600C54CCD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4CDF5723224EA06D00C54CCD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4CDF5725224EA09700C54CCD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		4CDF5727224EA0B900C54CCD /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		4CE1ADEE2252A655005AC27E /* GoogleMaps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoogleMaps.storyboard; sourceTree = "<group>"; };
 		4CE1ADF12252A79D005AC27E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4CE1ADF32252AA51005AC27E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		4CE1ADFA2252BF90005AC27E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4CE1ADFD2252BFD4005AC27E /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
+		703340E122CE3EBC001BCB4C /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		703340E322CE4093001BCB4C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		703340EB22CE45EF001BCB4C /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		703340ED22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		707EE5FC22CCF0FF00EC5ACF /* Devices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Devices.plist; sourceTree = "<group>"; };
 		707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Model.swift"; sourceTree = "<group>"; };
 		707EE60022CCF77500EC5ACF /* MailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailManager.swift; sourceTree = "<group>"; };
@@ -199,7 +205,9 @@
 		4C7584E3224E85A500DA2195 /* CompositionRoot */ = {
 			isa = PBXGroup;
 			children = (
-				4CDF5727224EA0B900C54CCD /* NavigationRouter.swift */,
+				703340EA22CE45DA001BCB4C /* DependencyInjection */,
+				703340E622CE4524001BCB4C /* Coordinator */,
+				703340E522CE44BB001BCB4C /* Navigation */,
 			);
 			path = CompositionRoot;
 			sourceTree = "<group>";
@@ -217,6 +225,7 @@
 			children = (
 				4CDF5725224EA09700C54CCD /* MainViewController.swift */,
 				4CDF5723224EA06D00C54CCD /* MainViewModel.swift */,
+				703340ED22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -294,6 +303,30 @@
 				FF1B7943C458C041315CADD7 /* Pods-Sunset_Sunrise.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		703340E522CE44BB001BCB4C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				703340E322CE4093001BCB4C /* Router.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		703340E622CE4524001BCB4C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				703340E122CE3EBC001BCB4C /* ApplicationCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		703340EA22CE45DA001BCB4C /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				703340EB22CE45EF001BCB4C /* DependencyContainer.swift */,
+			);
+			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
 		707EE5FB22CCF0FF00EC5ACF /* Device */ = {
@@ -516,10 +549,11 @@
 				707EE60122CCF77500EC5ACF /* MailManager.swift in Sources */,
 				4CBFFB17224F9049000F2B25 /* RoundButton.swift in Sources */,
 				4CDF5726224EA09700C54CCD /* MainViewController.swift in Sources */,
-				4CDF5728224EA0B900C54CCD /* NavigationRouter.swift in Sources */,
 				4C1F0A1422522972004A3A4E /* NetworkManager.swift in Sources */,
 				4C1F0A0F225221C7004A3A4E /* SunsetSunriseModel.swift in Sources */,
+				703340EC22CE45EF001BCB4C /* DependencyContainer.swift in Sources */,
 				4C4D199A2286FDDD006F8EEC /* BaseViewModel.swift in Sources */,
+				703340E422CE4093001BCB4C /* Router.swift in Sources */,
 				4C7584B6224E843100DA2195 /* AppDelegate.swift in Sources */,
 				4CDF5720224E93A600C54CCD /* LocationManager.swift in Sources */,
 				4C7584E6224E860000DA2195 /* UIStoryboard+StoryboardInitializing.swift in Sources */,
@@ -528,8 +562,10 @@
 				4C4D19932286FC02006F8EEC /* NoLocationViewController.swift in Sources */,
 				4CE1ADF22252A79D005AC27E /* MapViewController.swift in Sources */,
 				707EE5FF22CCF10000EC5ACF /* UIDevice+Model.swift in Sources */,
+				703340E222CE3EBC001BCB4C /* ApplicationCoordinator.swift in Sources */,
 				4CE1ADFB2252BF90005AC27E /* InfoViewController.swift in Sources */,
 				4C4D19952286FC0E006F8EEC /* NoLocationViewModel.swift in Sources */,
+				703340EE22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift in Sources */,
 				4CE1ADF42252AA51005AC27E /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

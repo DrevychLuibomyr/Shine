@@ -100,9 +100,11 @@ extension MapViewController: LocationManagerDelegate {
         case .notDetermined:
             print("Not determined")
         case .restricted, .denied:
-            viewModel.showNoLocationViewController(current: self, animated: true)
+            print("")
+           // viewModel.showNoLocationViewController(current: self, animated: true)
         case .authorizedWhenInUse, .authorizedAlways:
-            viewModel.dismissNoLocationViewController()
+            print("")
+            //viewModel.dismissNoLocationViewController()
         }
     }
     

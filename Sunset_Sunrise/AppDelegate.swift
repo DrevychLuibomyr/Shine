@@ -15,20 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    public var navigationRouter: NavigationRouter?
+    private var applicationCoordinator: ApplicationCoordinator?
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let navController = UINavigationController()
-        navController.navigationBar.barTintColor = .black
-        navController.navigationBar.tintColor = .white
-        navController.navigationBar.barStyle = .black
-        window = UIWindow(frame: UIScreen.main.bounds)
-        navigationRouter = NavigationRouter(navigationController: navController)
-        navigationRouter?.showMainViewController()
         
-        window?.rootViewController = navigationRouter?.navigationController
-        window?.makeKeyAndVisible()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let dep = DependencyContainer()
+        let router = Router(navigationController: UINavigationController())
+        let appCoordinator = ApplicationCoordinator(with: window, router: router, dependencies: dep)
         
+        appCoordinator.start()
         GMSPlacesClient.provideAPIKey(ApplicationConstants.googlePlaceApiKey)
         GMSServices.provideAPIKey(ApplicationConstants.googlePlaceApiKey)
         

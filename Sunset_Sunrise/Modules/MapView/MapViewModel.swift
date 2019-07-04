@@ -28,14 +28,6 @@ final class MapViewModel: BaseViewModel {
         locationManager.permissionForLocation()
     }
     
-    public func showNoLocationViewController(current: UIViewController, animated: Bool) {
-        self.appDelegate.navigationRouter?.showNoLocationViewController(previous: current, with: animated)
-    }
-    
-    public func dismissNoLocationViewController() {
-        self.appDelegate.navigationRouter?.dismiss(with: true)
-    }
-    
     public func showAlertError(on viewController: UIViewController,
                                buttonTitle: String,
                                title: String, message: String,
