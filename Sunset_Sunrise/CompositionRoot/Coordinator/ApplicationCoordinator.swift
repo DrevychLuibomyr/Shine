@@ -39,7 +39,7 @@ open class Coordinator: NSObject, CoordinatorType {
     
 }
 
-final class ApplicationCoordinator: Coordinator {
+class ApplicationCoordinator: Coordinator {
     
     let window: UIWindow
     
@@ -51,9 +51,9 @@ final class ApplicationCoordinator: Coordinator {
     public func start() {
        window.rootViewController = router.navigationController
        window.makeKeyAndVisible()
-       let vc = UIStoryboard.Main.mainVC
-       router.push(vc, animation: true
-        )
+       let input = MainInput(with: self)
+       let vc = dependencies.makeMainViewController(with: input)
+       router.push(vc, animation: true)
     }
     
     

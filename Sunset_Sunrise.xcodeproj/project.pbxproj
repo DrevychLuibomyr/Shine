@@ -38,6 +38,8 @@
 		707EE5FE22CCF10000EC5ACF /* Devices.plist in Resources */ = {isa = PBXBuildFile; fileRef = 707EE5FC22CCF0FF00EC5ACF /* Devices.plist */; };
 		707EE5FF22CCF10000EC5ACF /* UIDevice+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */; };
 		707EE60122CCF77500EC5ACF /* MailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707EE60022CCF77500EC5ACF /* MailManager.swift */; };
+		7084119522CF45EA003B46BB /* MainInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084119422CF45EA003B46BB /* MainInput.swift */; };
+		7084119822CF4620003B46BB /* ModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084119722CF4620003B46BB /* ModuleInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		707EE5FC22CCF0FF00EC5ACF /* Devices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Devices.plist; sourceTree = "<group>"; };
 		707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Model.swift"; sourceTree = "<group>"; };
 		707EE60022CCF77500EC5ACF /* MailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailManager.swift; sourceTree = "<group>"; };
+		7084119422CF45EA003B46BB /* MainInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInput.swift; sourceTree = "<group>"; };
+		7084119722CF4620003B46BB /* ModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleInput.swift; sourceTree = "<group>"; };
 		B8791EB447AA57730B879ABC /* Pods_Sunset_Sunrise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sunset_Sunrise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1B7943C458C041315CADD7 /* Pods-Sunset_Sunrise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.release.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +209,7 @@
 		4C7584E3224E85A500DA2195 /* CompositionRoot */ = {
 			isa = PBXGroup;
 			children = (
+				7084119622CF460B003B46BB /* ModuleInput */,
 				703340EA22CE45DA001BCB4C /* DependencyInjection */,
 				703340E622CE4524001BCB4C /* Coordinator */,
 				703340E522CE44BB001BCB4C /* Navigation */,
@@ -226,6 +231,7 @@
 				4CDF5725224EA09700C54CCD /* MainViewController.swift */,
 				4CDF5723224EA06D00C54CCD /* MainViewModel.swift */,
 				703340ED22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift */,
+				7084119422CF45EA003B46BB /* MainInput.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -336,6 +342,14 @@
 				707EE5FD22CCF0FF00EC5ACF /* UIDevice+Model.swift */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		7084119622CF460B003B46BB /* ModuleInput */ = {
+			isa = PBXGroup;
+			children = (
+				7084119722CF4620003B46BB /* ModuleInput.swift */,
+			);
+			path = ModuleInput;
 			sourceTree = "<group>";
 		};
 		7A050A0E996E0372AD1CFDBC /* Frameworks */ = {
@@ -554,6 +568,7 @@
 				703340EC22CE45EF001BCB4C /* DependencyContainer.swift in Sources */,
 				4C4D199A2286FDDD006F8EEC /* BaseViewModel.swift in Sources */,
 				703340E422CE4093001BCB4C /* Router.swift in Sources */,
+				7084119822CF4620003B46BB /* ModuleInput.swift in Sources */,
 				4C7584B6224E843100DA2195 /* AppDelegate.swift in Sources */,
 				4CDF5720224E93A600C54CCD /* LocationManager.swift in Sources */,
 				4C7584E6224E860000DA2195 /* UIStoryboard+StoryboardInitializing.swift in Sources */,
@@ -567,6 +582,7 @@
 				4C4D19952286FC0E006F8EEC /* NoLocationViewModel.swift in Sources */,
 				703340EE22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift in Sources */,
 				4CE1ADF42252AA51005AC27E /* MapViewModel.swift in Sources */,
+				7084119522CF45EA003B46BB /* MainInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

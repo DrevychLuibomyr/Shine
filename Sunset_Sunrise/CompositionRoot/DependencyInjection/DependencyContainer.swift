@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 protocol ModuleFactory {
-    func makeMainViewController() -> MainViewController
+    func makeMainViewController(with input: MainInput) -> MainViewController
     func makeGoogleMapsViewController() -> MapViewController
     func makeNoLocationViewController() -> NoLocationViewController
 }
@@ -19,10 +19,14 @@ final class DependencyContainer {  }
 
 extension DependencyContainer: ModuleFactory {
     
-    func makeMainViewController() -> MainViewController {
+    func makeMainViewController(with input: MainInput) -> MainViewController {
         let viewController = UIStoryboard.Main.mainVC
         let viewModel = MainViewModel()
+        let parent = input.parentCoordinator
+        let router: RouterType = Router(navigationController: parent.router.navigationController)
+        let coordinator = MainViewControllerCoordinator(with: router, dependencies: DependencyContainer())
         viewController.viewModel = viewModel
+        viewController.coordinator = coordinator
         
         return viewController
     }

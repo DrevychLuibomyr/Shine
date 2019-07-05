@@ -25,9 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let router = Router(navigationController: UINavigationController())
         let appCoordinator = ApplicationCoordinator(with: window, router: router, dependencies: dep)
         
-        appCoordinator.start()
+        self.applicationCoordinator = appCoordinator
+        self.window = window
+        
         GMSPlacesClient.provideAPIKey(ApplicationConstants.googlePlaceApiKey)
         GMSServices.provideAPIKey(ApplicationConstants.googlePlaceApiKey)
+        
+        appCoordinator.start()
         
         return true
     }
