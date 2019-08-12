@@ -6,7 +6,6 @@ target 'Sunset_Sunrise' do
   use_frameworks!
 
   # Pods for Sunset_Sunrise
-    pod "Alamofire"
     pod "GooglePlaces"
     pod 'GoogleMaps'
 end

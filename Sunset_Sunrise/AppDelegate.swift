@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let dep = DependencyContainer()
+        let dependencyContainter = DependencyContainer()
         let router = Router(navigationController: UINavigationController())
-        let appCoordinator = ApplicationCoordinator(with: window, router: router, dependencies: dep)
+        let appCoordinator = ApplicationCoordinator(with: window, router: router, dependencies: dependencyContainter)
         
         self.applicationCoordinator = appCoordinator
         self.window = window

@@ -9,6 +9,11 @@
 import Foundation
 import CoreLocation
 
+protocol LocationServiceProtocol {
+    func getCurrentLocation(completion: @escaping LocationResultHandler)
+    func permissionForLocation()
+}
+
 enum LocationResult {
     case success(lattitude: CLLocationDegrees, longitute: CLLocationDegrees)
     case faild(error: String)
@@ -30,9 +35,9 @@ typealias LocationResultHandler = (LocationResult) -> ()
 final class LocationManager: NSObject {
     
     private let locationManager = CLLocationManager()
-    public var status = CLLocationManager.authorizationStatus()
     fileprivate var locationHandlers: [LocationResultHandler] = []
     
+    public var status = CLLocationManager.authorizationStatus()    
     weak var delegate: LocationManagerDelegate?
     
     override init() {
@@ -40,26 +45,6 @@ final class LocationManager: NSObject {
         locationManager.delegate = self
         locationManager.distanceFilter = kCLLocationAccuracyBest
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-    }
-    
-    public func permissionForLocation() {
-        guard CLLocationManager.locationServicesEnabled() else { return }
-        switch status {
-        case .notDetermined:
-            locationManager.requestAlwaysAuthorization()
-        case .restricted:
-            print(PermissionState.restricted.rawValue)
-        case .denied:
-            print(PermissionState.denied.rawValue)
-        case .authorizedAlways,.authorizedWhenInUse:
-            locationManager.startUpdatingLocation()
-            print(PermissionState.authorized.rawValue)
-        }
-    }
-    
-    public func getCurrentLocation(completion: @escaping LocationResultHandler) {
-        locationHandlers.append(completion)
-        locationManager.requestLocation()
     }
     
 }
@@ -87,4 +72,29 @@ extension LocationManager: CLLocationManagerDelegate {
     final func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         self.delegate?.didChange(status: status)
     }
+}
+
+//MARK: LocationServiceProtocol
+extension LocationManager: LocationServiceProtocol {
+    
+    public func permissionForLocation() {
+        guard CLLocationManager.locationServicesEnabled() else { return }
+        switch status {
+        case .notDetermined:
+            locationManager.requestAlwaysAuthorization()
+        case .restricted:
+            print(PermissionState.restricted.rawValue)
+        case .denied:
+            print(PermissionState.denied.rawValue)
+        case .authorizedAlways,.authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+            print(PermissionState.authorized.rawValue)
+        }
+    }
+    
+    public func getCurrentLocation(completion: @escaping LocationResultHandler) {
+        locationHandlers.append(completion)
+        locationManager.requestLocation()
+    }
+
 }

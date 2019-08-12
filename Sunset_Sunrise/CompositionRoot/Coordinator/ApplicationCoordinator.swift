@@ -39,7 +39,7 @@ open class Coordinator: NSObject, CoordinatorType {
     
 }
 
-class ApplicationCoordinator: Coordinator {
+final class ApplicationCoordinator: Coordinator {
     
     let window: UIWindow
     

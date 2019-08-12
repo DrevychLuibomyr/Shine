@@ -15,8 +15,25 @@ protocol ModuleFactory {
     func makeNoLocationViewController() -> NoLocationViewController
 }
 
+protocol DependecyFactory {
+    func makeLocationService() -> LocationServiceProtocol
+    func makeNetworkService() -> NetworkServiceProtocol
+}
+
 final class DependencyContainer {  }
 
+extension DependencyContainer: DependecyFactory {
+    
+    func makeLocationService() -> LocationServiceProtocol {
+        return LocationManager()
+    }
+    
+    func makeNetworkService() -> NetworkServiceProtocol {
+        return NetworkManager()
+    }
+}
+
+//MARK: ModuleFactory
 extension DependencyContainer: ModuleFactory {
     
     func makeMainViewController(with input: MainInput) -> MainViewController {
@@ -37,7 +54,6 @@ extension DependencyContainer: ModuleFactory {
         let locationManager = LocationManager()
         let viewModel = MapViewModel(netwrok: networkManager, location: locationManager)
         viewController.viewModel = viewModel
-        
         
         return viewController
     }
