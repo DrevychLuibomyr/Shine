@@ -11,7 +11,7 @@ import UIKit
 import CoreLocation
 import GoogleMaps
 
-final class MapViewModel: BaseViewModel {
+final class MapViewModel {
     
     private var netwrokManager = NetworkManager()
     var locationManager = LocationManager()
@@ -32,12 +32,14 @@ final class MapViewModel: BaseViewModel {
                                buttonTitle: String,
                                title: String, message: String,
                                buttonAction: @escaping () -> Void) {
-        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertButton = UIAlertAction(title: buttonTitle, style: .default) { action in
-            buttonAction()
+        DispatchQueue.main.async {
+            let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let alertButton = UIAlertAction(title: buttonTitle, style: .default) { action in
+                buttonAction()
+            }
+            alertViewController.addAction(alertButton)
+            viewController.present(alertViewController,animated: true, completion: nil)
         }
-        alertViewController.addAction(alertButton)
-        viewController.present(alertViewController,animated: true, completion: nil)
     }
     
     public func getSunsetSunriseDataFromUserLocation(viewController: UIViewController,complition: @escaping ((Result) -> Void)) {

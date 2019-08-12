@@ -8,9 +8,8 @@
 
 import UIKit
 import Foundation
-import CoreLocation
 
-final class MainViewModel: BaseViewModel {
+final class MainViewModel {
     
     func exitFromApplication() {
         let application = UIApplication.shared
