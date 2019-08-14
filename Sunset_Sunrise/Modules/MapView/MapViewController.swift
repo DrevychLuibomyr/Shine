@@ -19,15 +19,11 @@ final class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self
-        viewModel.locationManager.delegate = self
-        self.mapView.camera = GMSCameraPosition.camera(withLatitude:49.840124, longitude: 24.028197, zoom: 11)
-        self.mapView.isMyLocationEnabled = true
         addInfroViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+       navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     //MARK: Private 
@@ -46,6 +42,13 @@ final class MapViewController: UIViewController {
             marker.map = self?.mapView
             self?.viewModel.marker = marker
         }
+    }
+    
+    private func setupViewController() {
+        mapView.delegate = self
+        viewModel.locationManager.delegate = self
+        mapView.camera = GMSCameraPosition.camera(withLatitude:49.840124, longitude: 24.028197, zoom: 11)
+        mapView.isMyLocationEnabled = true
     }
     
     private func addInfroViewController() {
@@ -84,28 +87,24 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
 
 //MARK: GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
-    
     final func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
         print("\(marker) change his position")
         print("New position in equal's \(marker.position.latitude) + \(marker.position.longitude)")
     }
-    
 }
 
 //MARK: LocaitonManagerDelegate
 extension MapViewController: LocationManagerDelegate {
-    
     final func didChange(status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
             print("Not determined")
         case .restricted, .denied:
             print("")
-           // viewModel.showNoLocationViewController(current: self, animated: true)
+        // viewModel.showNoLocationViewController(current: self, animated: true)
         case .authorizedWhenInUse, .authorizedAlways:
             print("")
             //viewModel.dismissNoLocationViewController()
         }
     }
-    
 }

@@ -26,8 +26,7 @@ final class InfoViewController: UIViewController {
     //MARK: Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(InfoViewController.panGesture))
-        view.addGestureRecognizer(gesture)
+        setupViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,12 +36,7 @@ final class InfoViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        UIView.animate(withDuration: 0.6, animations: { [weak self] in
-            let frame = self?.view.frame
-            let yComponent = self?.partialView
-            self?.view.frame = CGRect(x: 0, y: yComponent!, width: frame!.width, height: frame!.height)
-        })
+        showInfoView()
     }
     
     //MARK: Public
@@ -74,63 +68,46 @@ final class InfoViewController: UIViewController {
     
     //MARK - Private
     @IBAction func didTapOnGetDataFromUserLocation(_ sender: UIButton) {
-        self.fetchData(latitude: viewModel.currentUserLocation.coordinate.latitude, longitute: viewModel.currentUserLocation.coordinate.longitude)
+        //self.fetchData(latitude: viewModel.currentUserLocation.coordinate.latitude, longitute: viewModel.currentUserLocation.coordinate.longitude)
     }
     
     @IBAction func didTapOnPinLocation(_ sender: UIButton) {
-        self.fetch(latitude: viewModel.marker.position.latitude, longitute: viewModel.marker.position.longitude)
+       // self.fetch(latitude: viewModel.marker.position.latitude, longitute: viewModel.marker.position.longitude)
     }
     
     private func prepareBackgroundView(){
         let blurEffect = UIBlurEffect.init(style: .regular)
         let visualEffect = UIVisualEffectView.init(effect: blurEffect)
         let bluredView = UIVisualEffectView.init(effect: blurEffect)
-        bluredView.contentView.addSubview(visualEffect)
         
+        bluredView.contentView.addSubview(visualEffect)
+
         visualEffect.frame = UIScreen.main.bounds
         bluredView.frame = UIScreen.main.bounds
         
         view.insertSubview(bluredView, at: 0)
     }
     
-    private func fetchData(completion: (() -> Void)? = nil, latitude: CLLocationDegrees, longitute: CLLocationDegrees) {
-        viewModel.getSunsetSunriseDataFromUserLocation(viewController: self, complition:  { [weak self] (result) in
-            switch result {
-            case .success(let data):
-                self?.sunsetText.text = "\(ApplicationConstants.sunset) \(DateFormatter().getLocalTime(from: data.info?.sunsetDate ?? ""))"
-                self?.sunriseText.text = "\(ApplicationConstants.sunrise) \(DateFormatter().getLocalTime(from: data.info?.sunriseDate ?? ""))"
-                self?.twilightBeginText.text = "\(ApplicationConstants.twilightBeginText) \(DateFormatter().getLocalTime(from: data.info?.twilightBeginDate ?? ""))"
-                self?.twilightEndText.text = "\(ApplicationConstants.twilightEndText) \(DateFormatter().getLocalTime(from: data.info?.twilightBeginDate ?? ""))"
-            case .failure( _):
-                guard let `self` = self else { return }
-                self.viewModel.showAlertError(on: self, buttonTitle: ApplicationConstants.buttonAlertTitle, title: ApplicationConstants.alertControllerTitle, message: ApplicationConstants.networkAlertMessage, buttonAction:{ })
-            }
-        }
-    )}
+    private func setupViewController() {
+        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(InfoViewController.panGesture))
+        view.addGestureRecognizer(gesture)
+    }
     
-    private func fetch(completion: (() -> Void)? = nil, latitude: CLLocationDegrees, longitute: CLLocationDegrees) {
-        viewModel.getSunsetSunriseData(latitude: latitude, longitute: longitute, complition: { [weak self] (result) in
-            switch result {
-            case .success(let data):
-                self?.sunsetText.text = "\(ApplicationConstants.sunset) \(DateFormatter().getLocalTime(from: data.info?.sunsetDate ?? ""))"
-                self?.sunriseText.text = "\(ApplicationConstants.sunrise) \(DateFormatter().getLocalTime(from: data.info?.sunriseDate ?? ""))"
-                self?.twilightBeginText.text = "\(ApplicationConstants.twilightBeginText) \(DateFormatter().getLocalTime(from: data.info?.twilightBeginDate ?? ""))"
-                self?.twilightEndText.text = "\(ApplicationConstants.twilightEndText) \(DateFormatter().getLocalTime(from: data.info?.twilightBeginDate ?? ""))"
-            case .failure( _):
-                guard let `self` = self else { return }
-                self.viewModel.showAlertError(on: self, buttonTitle: ApplicationConstants.buttonAlertTitle, title: ApplicationConstants.alertControllerTitle, message: ApplicationConstants.networkAlertMessage, buttonAction:{ })
-            }
-        }
-    )}
+    private func showInfoView() {
+        UIView.animate(withDuration: 0.6, animations: { [weak self] in
+            let frame = self?.view.frame
+            let yComponent = self?.partialView
+            self?.view.frame = CGRect(x: 0, y: yComponent!, width: frame!.width, height: frame!.height)
+        })
+    }
 }
 
 //MARK: DateFormatter+GetLocalTime
 extension DateFormatter {
-    func getLocalTime(from time:String) -> String {
+    func getLocalTime(from time: String) -> String {
         self.dateFormat = "hh:mm:ss a"
-        self.timeZone = NSTimeZone(name: "UTC")! as TimeZone
-        guard let date = self.date(from: time) else { return "" }
         self.timeZone = NSTimeZone.local
+        guard let date = self.date(from: time) else { return "" }
         let timeStamp = self.string(from: date)
         return timeStamp
     }

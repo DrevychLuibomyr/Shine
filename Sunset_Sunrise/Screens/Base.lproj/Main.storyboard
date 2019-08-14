@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController restorationIdentifier="MainViewController" storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Sunset_Sunrise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-Qj-ZTE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="701"/>
+                                <rect key="frame" x="0.0" y="0.0" width="458" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDD-xe-gFr" customClass="RoundButton" customModule="Sunset_Sunrise" customModuleProvider="target">
-                                <rect key="frame" x="84" y="318.5" width="200" height="40"/>
+                                <rect key="frame" x="103.5" y="428" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4lC-J2-yKK"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="mCu-pr-bgD"/>
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zC-B4-ceM">
-                                <rect key="frame" x="0.0" y="626" width="375" height="41"/>
+                                <rect key="frame" x="0.0" y="821" width="414" height="41"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.74117647058823533" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="iNR-8c-71k"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fU-yW-VSR">
-                                <rect key="frame" x="292" y="61" width="48" height="48"/>
+                                <rect key="frame" x="331" y="85" width="48" height="48"/>
                                 <state key="normal" image="Setting"/>
                             </button>
                         </subviews>
@@ -67,7 +67,7 @@
                         <constraints>
                             <constraint firstItem="9zC-B4-ceM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="05C-lv-RQF"/>
                             <constraint firstItem="r4f-Qj-ZTE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2nd-c3-MAk"/>
-                            <constraint firstItem="r4f-Qj-ZTE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HM7-DY-ZSz"/>
+                            <constraint firstItem="r4f-Qj-ZTE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="44" id="HM7-DY-ZSz"/>
                             <constraint firstItem="yDD-xe-gFr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-5" id="KJc-pI-7ja"/>
                             <constraint firstItem="yDD-xe-gFr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-3.5" id="O5s-lk-8HY"/>
                             <constraint firstItem="9zC-B4-ceM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q3y-PN-qYk"/>
@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="24.7376311844078"/>
+            <point key="canvasLocation" x="51.5625" y="24.637681159420293"/>
         </scene>
     </scenes>
     <resources>

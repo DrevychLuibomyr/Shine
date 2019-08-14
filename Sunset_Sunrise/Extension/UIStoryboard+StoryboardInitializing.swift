@@ -45,5 +45,4 @@ extension UIStoryboard {
             return Names.noLocation.instantiateViewController(withType: NoLocationViewController.self)
         }
     }
-    
 }
