@@ -9,11 +9,6 @@
 import Foundation
 import CoreLocation
 
-protocol LocationServiceProtocol {
-    func getCurrentLocation(completion: @escaping LocationResultHandler)
-    func permissionForLocation()
-}
-
 enum LocationResult {
     case success(lattitude: CLLocationDegrees, longitute: CLLocationDegrees)
     case faild(error: String)
@@ -30,23 +25,29 @@ protocol LocationManagerDelegate: class {
     func didChange(status: CLAuthorizationStatus)
 }
 
+protocol LocationServiceProtocol {
+    func getCurrentLocation(completion: @escaping LocationResultHandler)
+    func permissionForLocation()
+}
+
 typealias LocationResultHandler = (LocationResult) -> ()
 
 final class LocationManager: NSObject {
-    
+   
+    //MARK: - Properties
     private let locationManager = CLLocationManager()
     fileprivate var locationHandlers: [LocationResultHandler] = []
     
     public var status = CLLocationManager.authorizationStatus()    
     weak var delegate: LocationManagerDelegate?
     
+    //MARK: - Constructor
     override init() {
         super.init()
         locationManager.delegate = self
         locationManager.distanceFilter = kCLLocationAccuracyBest
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
     }
-    
 }
 
 //MARK: CLLocationManagerDelegate
@@ -76,7 +77,6 @@ extension LocationManager: CLLocationManagerDelegate {
 
 //MARK: LocationServiceProtocol
 extension LocationManager: LocationServiceProtocol {
-    
     public func permissionForLocation() {
         guard CLLocationManager.locationServicesEnabled() else { return }
         switch status {
@@ -96,5 +96,4 @@ extension LocationManager: LocationServiceProtocol {
         locationHandlers.append(completion)
         locationManager.requestLocation()
     }
-
 }
