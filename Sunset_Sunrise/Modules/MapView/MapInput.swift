@@ -9,9 +9,7 @@
 import Foundation
 
 struct MapInput: ModuleInput {
-    
-    var parentCoordinator: CoordinatorType
-    
+    let parentCoordinator: CoordinatorType
     init(parent: CoordinatorType) {
         self.parentCoordinator = parent
     }

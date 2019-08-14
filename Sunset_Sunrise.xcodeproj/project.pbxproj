@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		349C54ABBA5604DE8BBD52C8 /* Pods_Sunset_Sunrise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8791EB447AA57730B879ABC /* Pods_Sunset_Sunrise.framework */; };
 		4C1F0A0F225221C7004A3A4E /* SunsetSunriseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F0A0E225221C7004A3A4E /* SunsetSunriseModel.swift */; };
 		4C1F0A1422522972004A3A4E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F0A1322522972004A3A4E /* NetworkManager.swift */; };
 		4C4D19932286FC02006F8EEC /* NoLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4D19922286FC02006F8EEC /* NoLocationViewController.swift */; };
@@ -36,6 +35,7 @@
 		703340EE22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703340ED22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift */; };
 		7084119522CF45EA003B46BB /* MainInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084119422CF45EA003B46BB /* MainInput.swift */; };
 		7084119822CF4620003B46BB /* ModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084119722CF4620003B46BB /* ModuleInput.swift */; };
+		AD9102060D47F6F10D51E611 /* Pods_Sunset_Sunrise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9620CFF75DE6BF2CDA11571 /* Pods_Sunset_Sunrise.framework */; };
 		F42240C122F9CB9400DC6909 /* MapInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42240C022F9CB9400DC6909 /* MapInput.swift */; };
 		F42F742922F4B20800E9FF61 /* TimerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F742822F4B20800E9FF61 /* TimerUtils.swift */; };
 		F42F742C22F4B33700E9FF61 /* CustomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F742B22F4B33700E9FF61 /* CustomeRequest.swift */; };
@@ -43,6 +43,8 @@
 		F42F743322F5C02900E9FF61 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F743222F5C02900E9FF61 /* HTTPMethod.swift */; };
 		F42F743522F5C06900E9FF61 /* URLConstructable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F743422F5C06900E9FF61 /* URLConstructable.swift */; };
 		F42F743722F5C14700E9FF61 /* RequestCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F743622F5C14700E9FF61 /* RequestCreatable.swift */; };
+		F4C91A6723044AAA0074585B /* MailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C91A6623044AAA0074585B /* MailManager.swift */; };
+		F4F74F262302FEB900F51210 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F74F252302FEB900F51210 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D1DC3DC4C5B9C16BCFE2DAE /* Pods-Sunset_Sunrise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.debug.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.debug.xcconfig"; sourceTree = "<group>"; };
 		4C1F0A0E225221C7004A3A4E /* SunsetSunriseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetSunriseModel.swift; sourceTree = "<group>"; };
 		4C1F0A1322522972004A3A4E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4C4D19922286FC02006F8EEC /* NoLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLocationViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +99,7 @@
 		703340ED22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		7084119422CF45EA003B46BB /* MainInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInput.swift; sourceTree = "<group>"; };
 		7084119722CF4620003B46BB /* ModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleInput.swift; sourceTree = "<group>"; };
-		B8791EB447AA57730B879ABC /* Pods_Sunset_Sunrise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sunset_Sunrise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		940F8CE117E64DA464DD77D3 /* Pods-Sunset_Sunrise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.debug.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.debug.xcconfig"; sourceTree = "<group>"; };
 		F42240C022F9CB9400DC6909 /* MapInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInput.swift; sourceTree = "<group>"; };
 		F42F742822F4B20800E9FF61 /* TimerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerUtils.swift; sourceTree = "<group>"; };
 		F42F742B22F4B33700E9FF61 /* CustomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeRequest.swift; sourceTree = "<group>"; };
@@ -106,7 +107,10 @@
 		F42F743222F5C02900E9FF61 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		F42F743422F5C06900E9FF61 /* URLConstructable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstructable.swift; sourceTree = "<group>"; };
 		F42F743622F5C14700E9FF61 /* RequestCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreatable.swift; sourceTree = "<group>"; };
-		FF1B7943C458C041315CADD7 /* Pods-Sunset_Sunrise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.release.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.release.xcconfig"; sourceTree = "<group>"; };
+		F4C91A6623044AAA0074585B /* MailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailManager.swift; sourceTree = "<group>"; };
+		F4F74F252302FEB900F51210 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F9620CFF75DE6BF2CDA11571 /* Pods_Sunset_Sunrise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sunset_Sunrise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF93DFDF5CA78EE9CA3CF846 /* Pods-Sunset_Sunrise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sunset_Sunrise.release.xcconfig"; path = "Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				349C54ABBA5604DE8BBD52C8 /* Pods_Sunset_Sunrise.framework in Frameworks */,
+				AD9102060D47F6F10D51E611 /* Pods_Sunset_Sunrise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +156,7 @@
 				4C7584D4224E843400DA2195 /* Sunset_SunriseUITests */,
 				4C7584B3224E843100DA2195 /* Products */,
 				6714792A265191EB50DA6726 /* Pods */,
-				7A050A0E996E0372AD1CFDBC /* Frameworks */,
+				ECA8D72E840DDA0A12CF567D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +210,7 @@
 		4C7584E3224E85A500DA2195 /* CompositionRoot */ = {
 			isa = PBXGroup;
 			children = (
+				F4A34DB72302FE79000B135B /* AppCoordinator */,
 				7084119622CF460B003B46BB /* ModuleInput */,
 				703340EA22CE45DA001BCB4C /* DependencyInjection */,
 				703340E622CE4524001BCB4C /* Coordinator */,
@@ -266,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				4CDF571F224E93A600C54CCD /* LocationManager.swift */,
+				F4C91A6623044AAA0074585B /* MailManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -302,8 +308,8 @@
 		6714792A265191EB50DA6726 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0D1DC3DC4C5B9C16BCFE2DAE /* Pods-Sunset_Sunrise.debug.xcconfig */,
-				FF1B7943C458C041315CADD7 /* Pods-Sunset_Sunrise.release.xcconfig */,
+				940F8CE117E64DA464DD77D3 /* Pods-Sunset_Sunrise.debug.xcconfig */,
+				FF93DFDF5CA78EE9CA3CF846 /* Pods-Sunset_Sunrise.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -340,10 +346,10 @@
 			path = ModuleInput;
 			sourceTree = "<group>";
 		};
-		7A050A0E996E0372AD1CFDBC /* Frameworks */ = {
+		ECA8D72E840DDA0A12CF567D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B8791EB447AA57730B879ABC /* Pods_Sunset_Sunrise.framework */,
+				F9620CFF75DE6BF2CDA11571 /* Pods_Sunset_Sunrise.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -361,6 +367,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		F4A34DB72302FE79000B135B /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F4F74F252302FEB900F51210 /* AppCoordinator.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,11 +382,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C7584DA224E843400DA2195 /* Build configuration list for PBXNativeTarget "Sunset_Sunrise" */;
 			buildPhases = (
-				6BBDD457D44FC98C30C21487 /* [CP] Check Pods Manifest.lock */,
+				12638051D3465A6917095D2A /* [CP] Check Pods Manifest.lock */,
 				4C7584AE224E843100DA2195 /* Sources */,
 				4C7584AF224E843100DA2195 /* Frameworks */,
 				4C7584B0224E843100DA2195 /* Resources */,
-				4CB6AEE0014F728CA299B7D8 /* [CP] Copy Pods Resources */,
+				25074A191470D6299B7BB5D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -496,24 +510,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4CB6AEE0014F728CA299B7D8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6BBDD457D44FC98C30C21487 /* [CP] Check Pods Manifest.lock */ = {
+		12638051D3465A6917095D2A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -533,6 +530,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25074A191470D6299B7BB5D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sunset_Sunrise/Pods-Sunset_Sunrise-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -562,12 +576,14 @@
 				4CE1ADF22252A79D005AC27E /* MapViewController.swift in Sources */,
 				703340E222CE3EBC001BCB4C /* ApplicationCoordinator.swift in Sources */,
 				4CE1ADFB2252BF90005AC27E /* InfoViewController.swift in Sources */,
+				F4F74F262302FEB900F51210 /* AppCoordinator.swift in Sources */,
 				F42F743722F5C14700E9FF61 /* RequestCreatable.swift in Sources */,
 				4C4D19952286FC0E006F8EEC /* NoLocationViewModel.swift in Sources */,
 				703340EE22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift in Sources */,
 				F42F743322F5C02900E9FF61 /* HTTPMethod.swift in Sources */,
 				4CE1ADF42252AA51005AC27E /* MapViewModel.swift in Sources */,
 				F42F742C22F4B33700E9FF61 /* CustomeRequest.swift in Sources */,
+				F4C91A6723044AAA0074585B /* MailManager.swift in Sources */,
 				7084119522CF45EA003B46BB /* MainInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,7 +757,7 @@
 		};
 		4C7584DB224E843400DA2195 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D1DC3DC4C5B9C16BCFE2DAE /* Pods-Sunset_Sunrise.debug.xcconfig */;
+			baseConfigurationReference = 940F8CE117E64DA464DD77D3 /* Pods-Sunset_Sunrise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -763,7 +779,7 @@
 		};
 		4C7584DC224E843400DA2195 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF1B7943C458C041315CADD7 /* Pods-Sunset_Sunrise.release.xcconfig */;
+			baseConfigurationReference = FF93DFDF5CA78EE9CA3CF846 /* Pods-Sunset_Sunrise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -42,19 +42,19 @@ final class MapViewModel {
         }
     }
     
-    public func getSunsetSunriseDataFromUserLocation(viewController: UIViewController,complition: @escaping ((Result) -> Void)) {
-        locationManager.getCurrentLocation { [weak self] result in
-            switch result {
-            case .success(let lattitude, let longitute):
-                self?.netwrokManager.getRequest(latitude: lattitude, longitute: longitute, complition: complition)
-            case .faild(let error):
-                self?.showAlertError(on: viewController, buttonTitle: ApplicationConstants.buttonAlertTitle , title: error, message: ApplicationConstants.alertControllerMessage, buttonAction: {})
-            }
-        }
-    }
-    
-    public func getSunsetSunriseData(latitude: CLLocationDegrees, longitute: CLLocationDegrees,complition: @escaping ((Result) -> Void)) {
-        netwrokManager.getRequest(latitude: latitude, longitute: longitute, complition: complition)
-    }
-    
+//    public func getSunsetSunriseDataFromUserLocation(viewController: UIViewController,complition: @escaping ((Result) -> Void)) {
+//        locationManager.getCurrentLocation { [weak self] result in
+//            switch result {
+//            case .success(let lattitude, let longitute):
+//                self?.netwrokManager.getRequest(latitude: lattitude, longitute: longitute, complition: complition)
+//            case .faild(let error):
+//                self?.showAlertError(on: viewController, buttonTitle: ApplicationConstants.buttonAlertTitle , title: error, message: ApplicationConstants.alertControllerMessage, buttonAction: {})
+//            }
+//        }
+//    }
+//    
+//    public func getSunsetSunriseData(latitude: CLLocationDegrees, longitute: CLLocationDegrees,complition: @escaping ((Result) -> Void)) {
+//        netwrokManager.getRequest(latitude: latitude, longitute: longitute, complition: complition)
+//    }
+//    
 }

@@ -31,6 +31,9 @@ extension DependencyContainer: DependecyFactory {
     func makeNetworkService() -> NetworkServiceProtocol {
         return NetworkManager()
     }
+    
+    
+    
 }
 
 //MARK: ModuleFactory
