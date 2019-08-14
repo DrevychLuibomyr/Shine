@@ -34,4 +34,9 @@ public enum NetworkError: LocalizedError {
         return message
     }
     
+    internal var toNSError: NSError {
+        let userInfo: [String: Any] = [NSLocalizedDescriptionKey: errorMessage()]
+        return NSError(domain: "APICallErrorDomain", code: 1, userInfo: userInfo)
+    }
+    
 }
