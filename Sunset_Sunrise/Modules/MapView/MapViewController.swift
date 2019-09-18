@@ -15,11 +15,11 @@ final class MapViewController: UIViewController {
     @IBOutlet private weak var mapView: GMSMapView!
     
     private var array = [GMSMarker]()
-    var viewModel: GoogleMapsPresenter!
+    var presenter: GoogleMapsPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.requestPermissionForLocation()
+        presenter.requestPermissionForLocation()
         addInfroViewController()
     }
     
@@ -27,25 +27,20 @@ final class MapViewController: UIViewController {
        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    //MARK: Private 
+    //MARK: - Private 
     @IBAction func didTapSearchAdress(_ sender: Any) {
         let autoCompleteController = GMSAutocompleteViewController()
         autoCompleteController.delegate = self
         self.present(autoCompleteController, animated: true, completion: nil)
     }
     
-    private func createPin(for longitute: CLLocationDegrees, latitude: CLLocationDegrees, marker: GMSMarker) {
-        DispatchQueue.main.async { [weak self] in
-            self?.array.append(marker)
-            marker.isDraggable = true
-            let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitute)
-            marker.position = position
-            marker.map = self?.mapView
-            self?.viewModel.marker = marker
-        }
+    private func setupViewController() {
+        setupGMSMapView()
+        addInfroViewController()
+        presenter.requestPermissionForLocation()
     }
     
-    private func setupViewController() {
+    private func setupGMSMapView() {
         mapView.delegate = self
         mapView.camera = GMSCameraPosition.camera(withLatitude:49.840124, longitude: 24.028197, zoom: 11)
         mapView.isMyLocationEnabled = true
@@ -53,7 +48,7 @@ final class MapViewController: UIViewController {
     
     private func addInfroViewController() {
         let infoViewCont = InfoViewController()
-        infoViewCont.viewModel = self.viewModel
+        infoViewCont.viewModel = self.presenter
         self.addChild(infoViewCont)
         self.view.addSubview(infoViewCont.view)
         infoViewCont.didMove(toParent: self)
@@ -68,11 +63,10 @@ final class MapViewController: UIViewController {
 extension MapViewController: GMSAutocompleteViewControllerDelegate {
     
     final func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        self.array.removeAll()
+        array.removeAll()
         let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
-        self.mapView.camera = camera
+        mapView.camera = camera
         self.dismiss(animated: true, completion: nil) // dismiss after select place
-        self.createPin(for: place.coordinate.longitude, latitude: place.coordinate.latitude, marker: self.viewModel.marker)
     }
     
     final func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {

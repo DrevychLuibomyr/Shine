@@ -13,7 +13,7 @@ import Foundation
 protocol GoogleMapsPresenterInterface: class {
     func getDataFromUserLocation(complition: @escaping ((NetworkResult) -> Void))
     func getDataFromPin(_ lat: Double, long: Double, complition: @escaping ((NetworkResult) -> Void))
-    func createPin(_ long: Double, lat: Double)
+    func createPin(_ long: Double, lat: Double, map: GMSMapView)
 }
 
 final class GoogleMapsPresenter {
@@ -33,6 +33,30 @@ final class GoogleMapsPresenter {
     public func requestPermissionForLocation() {
         locationManager.permissionForLocation()
     }
+}
+
+//MARK: - GoogleMapsPresenterInterface
+extension GoogleMapsPresenter: GoogleMapsPresenterInterface {
+    func getDataFromUserLocation(complition: @escaping ((NetworkResult) -> Void)) {
+        print()
+    }
+    
+    func getDataFromPin(_ lat: Double, long: Double, complition: @escaping ((NetworkResult) -> Void)) {
+        
+    }
+    
+    func createPin(_ long: Double, lat: Double, map: GMSMapView) {
+        let marker = GMSMarker()
+        marker.isDraggable = true
+        let position = PinModel(latitude: lat, longitude: long)
+        marker.position = CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
+        DispatchQueue.main.async {
+            marker.map = map
+        }
+        
+    }
+    
+    
 }
     
     
@@ -61,7 +85,7 @@ extension GoogleMapsPresenter: LocationManagerDelegate {
         case .notDetermined:
             print("Not determind")
         case .restricted, .denied:
-            coordinator.showNoLocationViewController()
+            print("Fuck")
         case .authorizedAlways, .authorizedWhenInUse:
             print("Authorized")
         }
