@@ -10,6 +10,10 @@ import UIKit
 import GoogleMaps
 import Foundation
 
+protocol GoogleMapsView: class {
+    func updateViews(with model: SunriseSunset)
+}
+
 protocol GoogleMapsPresenterInterface: class {
     func getDataFromUserLocation(complition: @escaping ((NetworkResult) -> Void))
     func getDataFromPin(_ lat: Double, long: Double, complition: @escaping ((NetworkResult) -> Void))
@@ -19,12 +23,11 @@ protocol GoogleMapsPresenterInterface: class {
 final class GoogleMapsPresenter {
     
     private var netwrokManager = NetworkManager()
-    private var coordinator: GoogleMapsCoordinator!
+    private weak var view: GoogleMapsView?
     var locationManager = LocationManager()
     var marker = GMSMarker()
     
-    init(netwrok: NetworkManager, location: LocationManager) {
-        self.netwrokManager = netwrok
+    init(location: LocationManager) {
         self.locationManager = location
         locationManager.delegate = self
     }
@@ -53,30 +56,8 @@ extension GoogleMapsPresenter: GoogleMapsPresenterInterface {
         DispatchQueue.main.async {
             marker.map = map
         }
-        
     }
-    
-    
 }
-    
-    
-    
-//    public func getSunsetSunriseDataFromUserLocation(viewController: UIViewController,complition: @escaping ((Result) -> Void)) {
-//        locationManager.getCurrentLocation { [weak self] result in
-//            switch result {
-//            case .success(let lattitude, let longitute):
-//                self?.netwrokManager.getRequest(latitude: lattitude, longitute: longitute, complition: complition)
-//            case .faild(let error):
-//                self?.showAlertError(on: viewController, buttonTitle: ApplicationConstants.buttonAlertTitle , title: error, message: ApplicationConstants.alertControllerMessage, buttonAction: {})
-//            }
-//        }
-//    }
-//    
-//    public func getSunsetSunriseData(latitude: CLLocationDegrees, longitute: CLLocationDegrees,complition: @escaping ((Result) -> Void)) {
-//        netwrokManager.getRequest(latitude: latitude, longitute: longitute, complition: complition)
-//    }
-//    
-
 
 //MARK: - LocationManagerDelegate
 extension GoogleMapsPresenter: LocationManagerDelegate {

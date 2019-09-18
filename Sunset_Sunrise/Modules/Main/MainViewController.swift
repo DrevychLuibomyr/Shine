@@ -13,7 +13,7 @@ final class MainViewController: UIViewController {
     @IBOutlet private weak var googlePlaceScenarioButton: UIButton!
     @IBOutlet private weak var exitButton: UIButton!
     
-    var viewModel: MainViewPresenter!
+    var presenter: MainViewPresenter!
     var coordinator: MainViewControllerCoordinator!
     
     //MARK: Life-Cycle
@@ -28,14 +28,14 @@ final class MainViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    //MARK: Private
+    //MARK: - Private
     private func showActionoSheet() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let feedbackAction = UIAlertAction(title: "Send Mail", style: .default) { [unowned self] action in
-            self.viewModel.sendFeedback(self)
+            self.presenter.sendFeedback(self)
         }
         let aboutProjAction = UIAlertAction(title: "About Project", style: .default) { action in
-            print("Hello")
+            self.addProjectInfoView()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         alert.addAction(feedbackAction)
@@ -52,13 +52,21 @@ final class MainViewController: UIViewController {
         
     }
     
+    private func addProjectInfoView() {
+        let infoView = ProjectView()
+        infoView.frame = CGRect(x: self.view.frame.width / 2,
+                                y: self.view.frame.height / 2,
+                                width: 0, height: 0)
+        self.view.addSubview(infoView)
+    }
     
+    //MARK: - Actions
     @IBAction private func showGoogleMapsScenario(_ sender: UIButton) {
         coordinator.showMap()
     }
     
     @IBAction private func exitApplication(_ sender: UIButton) {
-        viewModel.exitFromApplication()
+        presenter.exitFromApplication()
     }
     
     @IBAction private func didTapOnSettigs(_ sender: UIButton) {

@@ -12,11 +12,16 @@ import GooglePlaces
 
 final class MapViewController: UIViewController {
     
+    //MARK: - IBOutlet
     @IBOutlet private weak var mapView: GMSMapView!
     
-    private var array = [GMSMarker]()
-    var presenter: GoogleMapsPresenter!
+    //MARK: - Private Properties
+    private var pinArray = [GMSMarker]()
     
+    //MARK: - Properties
+    var presenter: GoogleMapsPresenter!
+ 
+    //MARK: - ViewController life-cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.requestPermissionForLocation()
@@ -35,20 +40,19 @@ final class MapViewController: UIViewController {
     }
     
     private func setupViewController() {
+        presenter.requestPermissionForLocation()
         setupGMSMapView()
         addInfroViewController()
-        presenter.requestPermissionForLocation()
     }
     
     private func setupGMSMapView() {
         mapView.delegate = self
-        mapView.camera = GMSCameraPosition.camera(withLatitude:49.840124, longitude: 24.028197, zoom: 11)
+        mapView.camera = GMSCameraPosition.camera(withLatitude: 49.840124, longitude: 24.028197, zoom: 11)
         mapView.isMyLocationEnabled = true
     }
     
     private func addInfroViewController() {
         let infoViewCont = InfoViewController()
-        infoViewCont.viewModel = self.presenter
         self.addChild(infoViewCont)
         self.view.addSubview(infoViewCont.view)
         infoViewCont.didMove(toParent: self)
@@ -63,10 +67,11 @@ final class MapViewController: UIViewController {
 extension MapViewController: GMSAutocompleteViewControllerDelegate {
     
     final func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        array.removeAll()
+        pinArray.removeAll()
         let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
         mapView.camera = camera
-        self.dismiss(animated: true, completion: nil) // dismiss after select place
+        self.dismiss(animated: true, completion: nil)
+        presenter.createPin(place.coordinate.longitude, lat: place.coordinate.latitude, map: mapView)
     }
     
     final func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
@@ -81,24 +86,14 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
 
 //MARK: GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didBeginDragging marker: GMSMarker) {
+        print(" Marker did start dragging")
+    }
+    
     final func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
-        print("\(marker) change his position")
-        print("New position in equal's \(marker.position.latitude) + \(marker.position.longitude)")
+        print(" Marker did stop dragging")
+        let markerModel = PinModel(latitude: marker.position.latitude, longitude: marker.position.longitude)
+        print(" long: \(markerModel.longitude), lat: \(markerModel.latitude)")
     }
 }
 
-//MARK: LocaitonManagerDelegate
-extension MapViewController: LocationManagerDelegate {
-    final func didChange(status: CLAuthorizationStatus) {
-        switch status {
-        case .notDetermined:
-            print("Not determined")
-        case .restricted, .denied:
-            print("")
-        // viewModel.showNoLocationViewController(current: self, animated: true)
-        case .authorizedWhenInUse, .authorizedAlways:
-            print("")
-            //viewModel.dismissNoLocationViewController()
-        }
-    }
-}

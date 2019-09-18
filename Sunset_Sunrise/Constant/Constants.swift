@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct ProjectInfoViewConstatns {
+    static let exitButton = "Exit"
+}
+
 struct ApplicationConstants {
     static let googlePlaceApiKey = "AIzaSyB2WZnPPZKk93zvB1xmWt_iDVwXAy6ae4k"
     static let exit = "Exit"
