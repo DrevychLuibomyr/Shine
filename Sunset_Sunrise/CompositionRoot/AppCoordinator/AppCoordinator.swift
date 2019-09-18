@@ -13,7 +13,7 @@ final class ApplicationCoordinator: Coordinator {
     
     let window: UIWindow
     
-    init(with window: UIWindow, router: RouterType, dependencies: DependencyContainer) {
+    init(with window: UIWindow, router: RouterType, dependencies: Container) {
         self.window = window
         super.init(router: router, dependencies: dependencies)
     }

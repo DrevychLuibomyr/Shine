@@ -8,6 +8,11 @@
 
 import UIKit
 import CoreLocation
+    
+fileprivate struct Constants {
+    let fullView: CGFloat = 100
+    var partialView: CGFloat { return UIScreen.main.bounds.height - 150 }
+}
 
 final class InfoViewController: UIViewController {
     
@@ -16,7 +21,7 @@ final class InfoViewController: UIViewController {
     @IBOutlet private weak var twilightEndText: UILabel!
     @IBOutlet private weak var twilightBeginText: UILabel!
 
-    var viewModel: MapViewModel!
+    var viewModel: GoogleMapsPresenter!
     
     private let fullView: CGFloat = 100
     private var partialView: CGFloat {

@@ -9,7 +9,27 @@
 import UIKit
 import Foundation
 
-final class MainViewModel {
+protocol MainViewPresenterInterface: class {
+    func exitFromApplication()
+    func sendFeedback(_ controller: UIViewController)
+}
+
+final class MainViewPresenter {
+    
+    //MARK: - Properties
+    private var mailManager = MailManager()
+    
+    //MARK: Constructor
+    init(manager: MailManager) {
+        self.mailManager = manager
+    }
+}
+
+//MARK: - MainViewPresenterInterface
+extension MainViewPresenter: MainViewPresenterInterface {
+    func sendFeedback(_ controller: UIViewController) {
+        mailManager.sendMessage(in: controller)
+    }
     
     func exitFromApplication() {
         let application = UIApplication.shared
@@ -17,5 +37,4 @@ final class MainViewModel {
         Thread.sleep(forTimeInterval: 0.5)
         exit(0)
     }
-    
 }

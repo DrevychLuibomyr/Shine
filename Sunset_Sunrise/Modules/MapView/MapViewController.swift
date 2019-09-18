@@ -15,10 +15,11 @@ final class MapViewController: UIViewController {
     @IBOutlet private weak var mapView: GMSMapView!
     
     private var array = [GMSMarker]()
-    var viewModel: MapViewModel!
+    var viewModel: GoogleMapsPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.requestPermissionForLocation()
         addInfroViewController()
     }
     
@@ -46,7 +47,6 @@ final class MapViewController: UIViewController {
     
     private func setupViewController() {
         mapView.delegate = self
-        viewModel.locationManager.delegate = self
         mapView.camera = GMSCameraPosition.camera(withLatitude:49.840124, longitude: 24.028197, zoom: 11)
         mapView.isMyLocationEnabled = true
     }

@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import CoreLocation
 
 final class MainViewController: UIViewController {
     
     @IBOutlet private weak var googlePlaceScenarioButton: UIButton!
     @IBOutlet private weak var exitButton: UIButton!
     
-    var viewModel: MainViewModel!
+    var viewModel: MainViewPresenter!
     var coordinator: MainViewControllerCoordinator!
     
     //MARK: Life-Cycle
@@ -30,6 +29,30 @@ final class MainViewController: UIViewController {
     }
     
     //MARK: Private
+    private func showActionoSheet() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let feedbackAction = UIAlertAction(title: "Send Mail", style: .default) { [unowned self] action in
+            self.viewModel.sendFeedback(self)
+        }
+        let aboutProjAction = UIAlertAction(title: "About Project", style: .default) { action in
+            print("Hello")
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        alert.addAction(feedbackAction)
+        alert.addAction(aboutProjAction)
+        alert.addAction(cancelAction)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = self.view.bounds
+            alert.popoverPresentationController?.permittedArrowDirections = [.down, .up]
+        }
+        
+        self.present(alert, animated: true)
+        
+    }
+    
+    
     @IBAction private func showGoogleMapsScenario(_ sender: UIButton) {
         coordinator.showMap()
     }
@@ -39,7 +62,6 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction private func didTapOnSettigs(_ sender: UIButton) {
-        
+        showActionoSheet()
     }
-    
 }

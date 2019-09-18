@@ -11,7 +11,7 @@ import UIKit
 
 protocol CoordinatorType {
     var router: RouterType { get }
-    var dependencies: DependencyContainer { get }
+    var dependencies: Container { get }
 }
 
 open class Coordinator: NSObject, CoordinatorType {
@@ -19,9 +19,9 @@ open class Coordinator: NSObject, CoordinatorType {
     public var childCoordinator: [Coordinator] = []
     
     public var router: RouterType
-    var dependencies: DependencyContainer
+    var dependencies: Container
     
-    init(router: RouterType, dependencies: DependencyContainer) {
+    init(router: RouterType, dependencies: Container) {
         self.router = router
         self.dependencies = dependencies
         super.init()

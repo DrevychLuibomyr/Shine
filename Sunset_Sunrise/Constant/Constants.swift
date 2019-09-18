@@ -37,4 +37,22 @@ struct NetwrokConstatns {
     static let dateValue = "today"
 }
 
+struct MailManagerConstatns  {
+    static let email = "LDrevych@gmail.com"
+    static let subject = "Feedback From"
+    static let body = """
+Dear reviewer
+Thank you, for paying attention for my work, a specially for review and for checking functionality.
+I hope you like my work and I want to hear where I mess up and what I need to do, to make my projects better and in what area I must increase my knowledge. For all points please provide good/bad point’s about this task
 
+List of moments during project creation
+1. Architecture
+2. Clean code
+3. SOLID principles
+4. Knowledge of language
+5. Design
+6. Personal opinion
+7. CI Configuration
+"""
+    static let recipients = ""
+}
