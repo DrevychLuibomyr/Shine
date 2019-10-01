@@ -12,21 +12,27 @@ import Foundation
 
 protocol GoogleMapsView: class {
     func updateViews(with model: SunriseSunset)
+    func didRecieve(_ error: String?)
+    func didChangeStatus()
 }
 
 protocol GoogleMapsPresenterInterface: class {
-    func getDataFromUserLocation(complition: @escaping ((NetworkResult) -> Void))
-    func getDataFromPin(_ lat: Double, long: Double, complition: @escaping ((NetworkResult) -> Void))
+    func getDataFromUserLocation()
+    func getDataFromPin(_ lat: Double, long: Double)
     func createPin(_ long: Double, lat: Double, map: GMSMapView)
 }
 
 final class GoogleMapsPresenter {
     
-    private var netwrokManager = NetworkManager()
+    //MARK: - Private Properties
+    private var service = MapsService()
     private weak var view: GoogleMapsView?
+    
+    //MARK: - Properties
     var locationManager = LocationManager()
     var marker = GMSMarker()
     
+    //MARK: - Constructor
     init(location: LocationManager) {
         self.locationManager = location
         locationManager.delegate = self
@@ -40,12 +46,35 @@ final class GoogleMapsPresenter {
 
 //MARK: - GoogleMapsPresenterInterface
 extension GoogleMapsPresenter: GoogleMapsPresenterInterface {
-    func getDataFromUserLocation(complition: @escaping ((NetworkResult) -> Void)) {
-        print()
+    
+    func getDataFromUserLocation() {
+        locationManager.getCurrentLocation { [weak self] (result) in
+            switch result {
+            case .success(let lattitude, let longitute):
+                self?.service.getData(lat: lattitude, long: longitute, complition: { (model) in
+                    switch model {
+                    case .success(let data, _):
+                        self?.view?.updateViews(with: data)
+                    case .failure(let error):
+                        guard let strongSelf = self else { return }
+                        strongSelf.view?.didRecieve(error.errorDescription)
+                    }
+                })
+            case .faild(let error):
+                self?.view?.didRecieve(error)
+            }
+        }
     }
     
-    func getDataFromPin(_ lat: Double, long: Double, complition: @escaping ((NetworkResult) -> Void)) {
-        
+    func getDataFromPin(_ lat: Double, long: Double) {
+        service.getData(lat: lat, long: long) { [weak self] (result) in
+            switch result {
+            case .success(let data, _):
+                self?.view?.updateViews(with: data)
+            case .failure(let error):
+                self?.view?.didRecieve(error.errorDescription)
+            }
+        }
     }
     
     func createPin(_ long: Double, lat: Double, map: GMSMapView) {
@@ -66,7 +95,7 @@ extension GoogleMapsPresenter: LocationManagerDelegate {
         case .notDetermined:
             print("Not determind")
         case .restricted, .denied:
-            print("Fuck")
+            view?.didChangeStatus()
         case .authorizedAlways, .authorizedWhenInUse:
             print("Authorized")
         }

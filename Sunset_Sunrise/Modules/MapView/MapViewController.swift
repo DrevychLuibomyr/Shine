@@ -75,7 +75,7 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
     }
     
     final func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        print("ERROR AUTO COMPLETE \(error)")
+        print(" ERROR AUTO COMPLETE \(error)")
     }
     
     final func wasCancelled(_ viewController: GMSAutocompleteViewController) {

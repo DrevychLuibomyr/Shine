@@ -66,11 +66,11 @@ final class InfoViewController: UIViewController {
     
     //MARK - Private
     @IBAction func didTapOnGetDataFromUserLocation(_ sender: UIButton) {
-        //self.fetchData(latitude: viewModel.currentUserLocation.coordinate.latitude, longitute: viewModel.currentUserLocation.coordinate.longitude)
+      
     }
     
     @IBAction func didTapOnPinLocation(_ sender: UIButton) {
-       // self.fetch(latitude: viewModel.marker.position.latitude, longitute: viewModel.marker.position.longitude)
+       
     }
     
     private func prepareBackgroundView(){
@@ -97,16 +97,5 @@ final class InfoViewController: UIViewController {
             let yComponent = self?.partialView
             self?.view.frame = CGRect(x: 0, y: yComponent!, width: frame!.width, height: frame!.height)
         })
-    }
-}
-
-//MARK: DateFormatter+GetLocalTime
-extension DateFormatter {
-    func getLocalTime(from time: String) -> String {
-        self.dateFormat = "hh:mm:ss a"
-        self.timeZone = NSTimeZone.local
-        guard let date = self.date(from: time) else { return "" }
-        let timeStamp = self.string(from: date)
-        return timeStamp
     }
 }

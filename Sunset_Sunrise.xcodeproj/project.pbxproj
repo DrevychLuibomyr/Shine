@@ -44,9 +44,9 @@
 		F42F743722F5C14700E9FF61 /* RequestCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F743622F5C14700E9FF61 /* RequestCreatable.swift */; };
 		F430100E233252FE00692655 /* PinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F430100D233252FE00692655 /* PinModel.swift */; };
 		F430101B23338B8A00692655 /* ProjectInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F430101A23338B8A00692655 /* ProjectInfo.storyboard */; };
-		F430101E2333938C00692655 /* ProjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F430101D2333938C00692655 /* ProjViewController.swift */; };
 		F434A5B923424480009A6BE5 /* GoogleMapsEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434A5B823424480009A6BE5 /* GoogleMapsEndpoints.swift */; };
 		F434A5BC23424656009A6BE5 /* MapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434A5BB23424656009A6BE5 /* MapsService.swift */; };
+		F4488B4E2343877300FBEC6F /* DateFormatter+CurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4488B4D2343877300FBEC6F /* DateFormatter+CurrentTime.swift */; };
 		F4AF29EE233234A900857B53 /* UIViewController+AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AF29ED233234A900857B53 /* UIViewController+AlertView.swift */; };
 		F4C91A6723044AAA0074585B /* MailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C91A6623044AAA0074585B /* MailManager.swift */; };
 		F4F74F262302FEB900F51210 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F74F252302FEB900F51210 /* AppCoordinator.swift */; };
@@ -113,9 +113,9 @@
 		F42F743622F5C14700E9FF61 /* RequestCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreatable.swift; sourceTree = "<group>"; };
 		F430100D233252FE00692655 /* PinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinModel.swift; sourceTree = "<group>"; };
 		F430101A23338B8A00692655 /* ProjectInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectInfo.storyboard; sourceTree = "<group>"; };
-		F430101D2333938C00692655 /* ProjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjViewController.swift; sourceTree = "<group>"; };
 		F434A5B823424480009A6BE5 /* GoogleMapsEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsEndpoints.swift; sourceTree = "<group>"; };
 		F434A5BB23424656009A6BE5 /* MapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsService.swift; sourceTree = "<group>"; };
+		F4488B4D2343877300FBEC6F /* DateFormatter+CurrentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+CurrentTime.swift"; sourceTree = "<group>"; };
 		F4AF29ED233234A900857B53 /* UIViewController+AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertView.swift"; sourceTree = "<group>"; };
 		F4C91A6623044AAA0074585B /* MailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailManager.swift; sourceTree = "<group>"; };
 		F4F74F252302FEB900F51210 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		4C7584B4224E843100DA2195 /* Sunset_Sunrise */ = {
 			isa = PBXGroup;
 			children = (
-				F42F742A22F4B32000E9FF61 /* Network */,
+				F42F742A22F4B32000E9FF61 /* API */,
 				4CBFFB1F224F9F4A000F2B25 /* Screens */,
 				4CBFFB15224F902C000F2B25 /* View */,
 				4CDF5722224EA01900C54CCD /* Modules */,
@@ -227,6 +227,7 @@
 				4C7584E5224E860000DA2195 /* UIStoryboard+StoryboardInitializing.swift */,
 				F4AF29ED233234A900857B53 /* UIViewController+AlertView.swift */,
 				F42F0E1923421B1F00546908 /* UIColor+AppColor.swift */,
+				F4488B4D2343877300FBEC6F /* DateFormatter+CurrentTime.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -366,26 +367,24 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
-		F42F742A22F4B32000E9FF61 /* Network */ = {
+		F42F742A22F4B32000E9FF61 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F4488B5323438A8500FBEC6F /* URL */,
+				F4488B5223438A7900FBEC6F /* Errors */,
+				F4488B5123438A5A00FBEC6F /* Methods */,
+				F4488B5023438A4C00FBEC6F /* Request */,
+				F4488B4F2343880A00FBEC6F /* Manager */,
 				F434A5BA2342463A009A6BE5 /* Service */,
 				F434A5B723424469009A6BE5 /* Endpoints */,
-				4C1F0A1322522972004A3A4E /* NetworkManager.swift */,
-				F42F742B22F4B33700E9FF61 /* CustomeRequest.swift */,
-				F42F742D22F5A14D00E9FF61 /* NetworkError.swift */,
-				F42F743222F5C02900E9FF61 /* HTTPMethod.swift */,
-				F42F743422F5C06900E9FF61 /* URLConstructable.swift */,
-				F42F743622F5C14700E9FF61 /* RequestCreatable.swift */,
 			);
-			path = Network;
+			path = API;
 			sourceTree = "<group>";
 		};
 		F430101C2333935F00692655 /* InfoViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				4CE1ADFA2252BF90005AC27E /* InfoViewController.swift */,
-				F430101D2333938C00692655 /* ProjViewController.swift */,
 			);
 			path = InfoViewControllers;
 			sourceTree = "<group>";
@@ -404,6 +403,47 @@
 				F434A5BB23424656009A6BE5 /* MapsService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		F4488B4F2343880A00FBEC6F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F0A1322522972004A3A4E /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F4488B5023438A4C00FBEC6F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F42F742B22F4B33700E9FF61 /* CustomeRequest.swift */,
+				F42F743622F5C14700E9FF61 /* RequestCreatable.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		F4488B5123438A5A00FBEC6F /* Methods */ = {
+			isa = PBXGroup;
+			children = (
+				F42F743222F5C02900E9FF61 /* HTTPMethod.swift */,
+			);
+			path = Methods;
+			sourceTree = "<group>";
+		};
+		F4488B5223438A7900FBEC6F /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				F42F742D22F5A14D00E9FF61 /* NetworkError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		F4488B5323438A8500FBEC6F /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				F42F743422F5C06900E9FF61 /* URLConstructable.swift */,
+			);
+			path = URL;
 			sourceTree = "<group>";
 		};
 		F4A34DB72302FE79000B135B /* AppCoordinator */ = {
@@ -597,7 +637,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CBFFB17224F9049000F2B25 /* RoundButton.swift in Sources */,
-				F430101E2333938C00692655 /* ProjViewController.swift in Sources */,
 				4CDF5726224EA09700C54CCD /* MainViewController.swift in Sources */,
 				F4AF29EE233234A900857B53 /* UIViewController+AlertView.swift in Sources */,
 				F42F742E22F5A14D00E9FF61 /* NetworkError.swift in Sources */,
@@ -626,6 +665,7 @@
 				F42F743322F5C02900E9FF61 /* HTTPMethod.swift in Sources */,
 				4CE1ADF42252AA51005AC27E /* MapViewModel.swift in Sources */,
 				F434A5BC23424656009A6BE5 /* MapsService.swift in Sources */,
+				F4488B4E2343877300FBEC6F /* DateFormatter+CurrentTime.swift in Sources */,
 				F42F742C22F4B33700E9FF61 /* CustomeRequest.swift in Sources */,
 				F4C91A6723044AAA0074585B /* MailManager.swift in Sources */,
 				7084119522CF45EA003B46BB /* MainInput.swift in Sources */,
