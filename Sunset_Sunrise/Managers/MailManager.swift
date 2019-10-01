@@ -11,11 +11,43 @@ import MessageUI
 
 final class MailManager: NSObject {
     
+    //MARK: - Properties
+    private let picker = MFMailComposeViewController()
+    
+    //MARK: - Constructor
+    override init() {
+        super.init()
+        picker.delegate = self
+    }
+    
+    //MARK: - Methods
+    public func sendMessage(in controller: UIViewController) {
+        guard MFMailComposeViewController.canSendMail() else {
+            showAlert(on: controller, title: "Oppss......", message: "Smth goes wrong", complition: { })
+            return
+        }
+        picker.setSubject(MailManagerConstatns.subject)
+        picker.setToRecipients([MailManagerConstatns.email])
+        picker.setToRecipients([MailManagerConstatns.recipients])
+        picker.setMessageBody(MailManagerConstatns.body, isHTML: false)
+    
+        controller.present(picker, animated: true, completion: nil)
+    }
+    
+    private func showAlert(on controller: UIViewController, title: String, message: String, complition: @escaping () -> Void) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default) { action in
+            complition()
+        }
+        alertController.addAction(action)
+        controller.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
+//MARK: - MFMailComposeViewControllerDelegate
 extension MailManager: MFMailComposeViewControllerDelegate {
-   
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+   final func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         switch result {
         case .cancelled:
             print("Cancelled")
@@ -31,3 +63,5 @@ extension MailManager: MFMailComposeViewControllerDelegate {
     }
 }
 
+//MARK: UINavigationControllerDelegate
+extension MailManager: UINavigationControllerDelegate { }

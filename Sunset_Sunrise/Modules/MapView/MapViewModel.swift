@@ -6,41 +6,36 @@
 //  Copyright © 2019 liubomyr.drevych. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import CoreLocation
 import GoogleMaps
+import Foundation
 
-final class MapViewModel {
+protocol GoogleMapsPresenterInterface: class {
+    func getDataFromUserLocation(complition: @escaping ((NetworkResult) -> Void))
+    func getDataFromPin(_ lat: Double, long: Double, complition: @escaping ((NetworkResult) -> Void))
+    func createPin(_ long: Double, lat: Double)
+}
+
+final class GoogleMapsPresenter {
     
     private var netwrokManager = NetworkManager()
+    private var coordinator: GoogleMapsCoordinator!
     var locationManager = LocationManager()
-    var currentUserLocation = CLLocation()
     var marker = GMSMarker()
     
     init(netwrok: NetworkManager, location: LocationManager) {
         self.netwrokManager = netwrok
         self.locationManager = location
+        locationManager.delegate = self
     }
     
     //MARK: Public
     public func requestPermissionForLocation() {
         locationManager.permissionForLocation()
     }
+}
     
-    public func showAlertError(on viewController: UIViewController,
-                               buttonTitle: String,
-                               title: String, message: String,
-                               buttonAction: @escaping () -> Void) {
-        DispatchQueue.main.async {
-            let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let alertButton = UIAlertAction(title: buttonTitle, style: .default) { action in
-                buttonAction()
-            }
-            alertViewController.addAction(alertButton)
-            viewController.present(alertViewController,animated: true, completion: nil)
-        }
-    }
+    
     
 //    public func getSunsetSunriseDataFromUserLocation(viewController: UIViewController,complition: @escaping ((Result) -> Void)) {
 //        locationManager.getCurrentLocation { [weak self] result in
@@ -57,4 +52,18 @@ final class MapViewModel {
 //        netwrokManager.getRequest(latitude: latitude, longitute: longitute, complition: complition)
 //    }
 //    
+
+
+//MARK: - LocationManagerDelegate
+extension GoogleMapsPresenter: LocationManagerDelegate {
+    func didChange(status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            print("Not determind")
+        case .restricted, .denied:
+            coordinator.showNoLocationViewController()
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("Authorized")
+        }
+    }
 }

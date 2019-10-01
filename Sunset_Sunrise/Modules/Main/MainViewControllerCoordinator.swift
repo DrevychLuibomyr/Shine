@@ -13,10 +13,13 @@ protocol MainViewControllerCoordinatorType {
 }
 
 final class MainViewControllerCoordinator: CoordinatorType {
-    var router: RouterType
-    var dependencies: DependencyContainer
     
-    init(with router: RouterType, dependencies: DependencyContainer) {
+    //MARK: - Properties
+    var router: RouterType
+    var dependencies: Container
+    
+    //MARK: - Constructor
+    init(with router: RouterType, dependencies: Container) {
         self.router = router
         self.dependencies = dependencies
     }

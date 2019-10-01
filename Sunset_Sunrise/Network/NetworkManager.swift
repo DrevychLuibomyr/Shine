@@ -45,7 +45,7 @@ extension NetworkManager: NetworkServiceProtocol {
             return
         }
         
-        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+        let task = session.dataTask(with: urlRequest) { [unowned self] (data, response, error) in
             guard let response = response as? HTTPURLResponse else {
                 complition(.failure(error: .generalFailure))
                 return
@@ -67,10 +67,12 @@ extension NetworkManager: NetworkServiceProtocol {
                 DispatchQueue.main.async {
                     complition(.success(data: models, headers: headers))
                 }
+                
             case 400...404:
                 DispatchQueue.main.async {
                     complition(.failure(error: .requestFailed(statusCode: response.statusCode)))
                 }
+                
             default:
                 DispatchQueue.main.async {
                     complition(.failure(error: .requestFailed(statusCode: response.statusCode)))

@@ -20,31 +20,18 @@ protocol DependecyFactory {
     func makeNetworkService() -> NetworkServiceProtocol
 }
 
-final class DependencyContainer {  }
-
-extension DependencyContainer: DependecyFactory {
-    
-    func makeLocationService() -> LocationServiceProtocol {
-        return LocationManager()
-    }
-    
-    func makeNetworkService() -> NetworkServiceProtocol {
-        return NetworkManager()
-    }
-    
-    
-    
-}
+final class Container {  }
 
 //MARK: ModuleFactory
-extension DependencyContainer: ModuleFactory {
+extension Container: ModuleFactory {
     
     func makeMainViewController(with input: MainInput) -> MainViewController {
         let viewController = UIStoryboard.Main.mainVC
-        let viewModel = MainViewModel()
+        let mailManager = MailManager()
+        let viewModel = MainViewPresenter(manager: mailManager)
         let parent = input.parentCoordinator
         let router: RouterType = Router(navigationController: parent.router.navigationController)
-        let coordinator = MainViewControllerCoordinator(with: router, dependencies: DependencyContainer())
+        let coordinator = MainViewControllerCoordinator(with: router, dependencies: Container())
         viewController.viewModel = viewModel
         viewController.coordinator = coordinator
         
@@ -55,7 +42,7 @@ extension DependencyContainer: ModuleFactory {
         let viewController = UIStoryboard.GoogleMaps.googleMapsVC
         let networkManager = NetworkManager()
         let locationManager = LocationManager()
-        let viewModel = MapViewModel(netwrok: networkManager, location: locationManager)
+        let viewModel = GoogleMapsPresenter(netwrok: networkManager, location: locationManager)
         viewController.viewModel = viewModel
         
         return viewController
