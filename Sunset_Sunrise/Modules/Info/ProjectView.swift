@@ -14,6 +14,7 @@ protocol ProjectViewDelegate: class {
 
 final class ProjectView: UIView {
 
+    //MARK: - Properties 
     weak var delegate: ProjectViewDelegate?
 
     @IBOutlet private weak var textView: UITextView!
