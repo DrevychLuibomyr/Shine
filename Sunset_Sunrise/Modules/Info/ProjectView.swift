@@ -14,7 +14,7 @@ protocol ProjectViewDelegate: class {
 
 final class ProjectView: UIView {
 
-    //MARK: - Properties 
+    //MARK: - Properties
     weak var delegate: ProjectViewDelegate?
 
     @IBOutlet private weak var textView: UITextView!
@@ -30,6 +30,7 @@ final class ProjectView: UIView {
         setupView()
     }
     
+    //MARK: - Private 
     private func setupView() {
         Bundle.main.loadNibNamed("ProjectViewInfo", owner: self, options: nil)
         quitButton.setTitle(ProjectInfoViewConstatns.exitButton, for: .normal)
