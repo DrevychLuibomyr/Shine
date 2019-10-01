@@ -13,7 +13,7 @@ protocol NetworkServiceProtocol {
     func send(request: RequestCreatable, latitude: CLLocationDegrees, longitute: CLLocationDegrees, complition: @escaping ((NetworkResult) -> Void))
 }
 
-enum NetworkResult {
+internal enum NetworkResult {
     case success(data: SunriseSunset, headers: [String:String])
     case failure(error: NetworkError)
 }

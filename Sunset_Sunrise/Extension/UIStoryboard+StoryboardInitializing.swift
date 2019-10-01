@@ -25,7 +25,7 @@ extension UIStoryboard {
     private enum Names {
         static let main = UIStoryboard(name: "Main", bundle: nil)
         static let google = UIStoryboard(name: "GoogleMaps", bundle: nil)
-        static let noLocation = UIStoryboard(name: "NoLocation", bundle: nil)
+
     }
     
     enum Main {
@@ -37,12 +37,6 @@ extension UIStoryboard {
     enum GoogleMaps {
         static var googleMapsVC: MapViewController {
             return Names.google.instantiateViewController(withType: MapViewController.self)
-        }
-    }
-    
-    enum NoLocation {
-        static var noLocationVC: NoLocationViewController {
-            return Names.noLocation.instantiateViewController(withType: NoLocationViewController.self)
         }
     }
 }

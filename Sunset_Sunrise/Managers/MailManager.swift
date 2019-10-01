@@ -30,7 +30,7 @@ final class MailManager: NSObject {
         picker.setToRecipients([MailManagerConstatns.email])
         picker.setToRecipients([MailManagerConstatns.recipients])
         picker.setMessageBody(MailManagerConstatns.body, isHTML: false)
-    
+        
         controller.present(picker, animated: true, completion: nil)
     }
     
@@ -47,7 +47,7 @@ final class MailManager: NSObject {
 
 //MARK: - MFMailComposeViewControllerDelegate
 extension MailManager: MFMailComposeViewControllerDelegate {
-   final func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+    final func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         switch result {
         case .cancelled:
             print("Cancelled")
@@ -62,6 +62,7 @@ extension MailManager: MFMailComposeViewControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
     }
 }
+
 
 //MARK: UINavigationControllerDelegate
 extension MailManager: UINavigationControllerDelegate { }

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-Qj-ZTE">
-                                <rect key="frame" x="0.0" y="0.0" width="419" height="701"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="701"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDD-xe-gFr" customClass="RoundButton" customModule="Sunset_Sunrise" customModuleProvider="target">
                                 <rect key="frame" x="84" y="318.5" width="200" height="40"/>
@@ -74,7 +74,7 @@
                         <constraints>
                             <constraint firstItem="9zC-B4-ceM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="05C-lv-RQF"/>
                             <constraint firstItem="r4f-Qj-ZTE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2nd-c3-MAk"/>
-                            <constraint firstItem="r4f-Qj-ZTE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="44" id="HM7-DY-ZSz"/>
+                            <constraint firstItem="r4f-Qj-ZTE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HM7-DY-ZSz"/>
                             <constraint firstItem="yDD-xe-gFr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-5" id="KJc-pI-7ja"/>
                             <constraint firstItem="yDD-xe-gFr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-3.5" id="O5s-lk-8HY"/>
                             <constraint firstItem="9zC-B4-ceM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q3y-PN-qYk"/>

@@ -12,7 +12,6 @@ import Foundation
 protocol ModuleFactory {
     func makeMainViewController(with input: MainInput) -> MainViewController
     func makeGoogleMapsViewController() -> MapViewController
-    func makeNoLocationViewController() -> NoLocationViewController
 }
 
 protocol DependecyFactory {
@@ -28,11 +27,11 @@ extension Container: ModuleFactory {
     func makeMainViewController(with input: MainInput) -> MainViewController {
         let viewController = UIStoryboard.Main.mainVC
         let mailManager = MailManager()
-        let viewModel = MainViewPresenter(manager: mailManager)
+        let presenter = MainViewPresenter(manager: mailManager)
         let parent = input.parentCoordinator
         let router: RouterType = Router(navigationController: parent.router.navigationController)
         let coordinator = MainViewControllerCoordinator(with: router, dependencies: Container())
-        viewController.viewModel = viewModel
+        viewController.presenter = presenter
         viewController.coordinator = coordinator
         
         return viewController
@@ -40,19 +39,11 @@ extension Container: ModuleFactory {
     
     func makeGoogleMapsViewController() -> MapViewController {
         let viewController = UIStoryboard.GoogleMaps.googleMapsVC
-        let networkManager = NetworkManager()
         let locationManager = LocationManager()
-        let viewModel = GoogleMapsPresenter(netwrok: networkManager, location: locationManager)
-        viewController.viewModel = viewModel
+        let presenter = GoogleMapsPresenter(location: locationManager)
+        viewController.presenter = presenter
         
         return viewController
     }
-    
-    func makeNoLocationViewController() -> NoLocationViewController {
-        let viewController = UIStoryboard.NoLocation.noLocationVC
-        
-        return viewController
-    }
-    
     
 }
