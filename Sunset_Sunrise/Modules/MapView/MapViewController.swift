@@ -24,6 +24,7 @@ final class MapViewController: UIViewController {
     //MARK: - ViewController life-cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.getDataFromUserLocation()
         presenter.requestPermissionForLocation()
         addInfroViewController()
     }

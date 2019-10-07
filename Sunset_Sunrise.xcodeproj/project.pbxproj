@@ -23,7 +23,7 @@
 		4CDF5726224EA09700C54CCD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF5725224EA09700C54CCD /* MainViewController.swift */; };
 		4CE1ADEF2252A655005AC27E /* GoogleMaps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1ADEE2252A655005AC27E /* GoogleMaps.storyboard */; };
 		4CE1ADF22252A79D005AC27E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1ADF12252A79D005AC27E /* MapViewController.swift */; };
-		4CE1ADF42252AA51005AC27E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1ADF32252AA51005AC27E /* MapViewModel.swift */; };
+		4CE1ADF42252AA51005AC27E /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1ADF32252AA51005AC27E /* MapPresenter.swift */; };
 		4CE1ADFB2252BF90005AC27E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1ADFA2252BF90005AC27E /* InfoViewController.swift */; };
 		4CE1ADFE2252BFD4005AC27E /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1ADFD2252BFD4005AC27E /* InfoViewController.xib */; };
 		703340E222CE3EBC001BCB4C /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703340E122CE3EBC001BCB4C /* ApplicationCoordinator.swift */; };
@@ -47,6 +47,7 @@
 		F434A5B923424480009A6BE5 /* GoogleMapsEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434A5B823424480009A6BE5 /* GoogleMapsEndpoints.swift */; };
 		F434A5BC23424656009A6BE5 /* MapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434A5BB23424656009A6BE5 /* MapsService.swift */; };
 		F4488B4E2343877300FBEC6F /* DateFormatter+CurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4488B4D2343877300FBEC6F /* DateFormatter+CurrentTime.swift */; };
+		F4488B5523438C7600FBEC6F /* MapInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4488B5423438C7600FBEC6F /* MapInput.swift */; };
 		F4AF29EE233234A900857B53 /* UIViewController+AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AF29ED233234A900857B53 /* UIViewController+AlertView.swift */; };
 		F4C91A6723044AAA0074585B /* MailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C91A6623044AAA0074585B /* MailManager.swift */; };
 		F4F74F262302FEB900F51210 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F74F252302FEB900F51210 /* AppCoordinator.swift */; };
@@ -92,7 +93,7 @@
 		4CDF5725224EA09700C54CCD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4CE1ADEE2252A655005AC27E /* GoogleMaps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoogleMaps.storyboard; sourceTree = "<group>"; };
 		4CE1ADF12252A79D005AC27E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		4CE1ADF32252AA51005AC27E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		4CE1ADF32252AA51005AC27E /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		4CE1ADFA2252BF90005AC27E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4CE1ADFD2252BFD4005AC27E /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		703340E122CE3EBC001BCB4C /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		F434A5B823424480009A6BE5 /* GoogleMapsEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsEndpoints.swift; sourceTree = "<group>"; };
 		F434A5BB23424656009A6BE5 /* MapsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsService.swift; sourceTree = "<group>"; };
 		F4488B4D2343877300FBEC6F /* DateFormatter+CurrentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+CurrentTime.swift"; sourceTree = "<group>"; };
+		F4488B5423438C7600FBEC6F /* MapInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInput.swift; sourceTree = "<group>"; };
 		F4AF29ED233234A900857B53 /* UIViewController+AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertView.swift"; sourceTree = "<group>"; };
 		F4C91A6623044AAA0074585B /* MailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailManager.swift; sourceTree = "<group>"; };
 		F4F74F252302FEB900F51210 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -304,7 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				4CE1ADF12252A79D005AC27E /* MapViewController.swift */,
-				4CE1ADF32252AA51005AC27E /* MapViewModel.swift */,
+				4CE1ADF32252AA51005AC27E /* MapPresenter.swift */,
+				F4488B5423438C7600FBEC6F /* MapInput.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				4C7584B6224E843100DA2195 /* AppDelegate.swift in Sources */,
 				4CDF5720224E93A600C54CCD /* LocationManager.swift in Sources */,
 				F430100E233252FE00692655 /* PinModel.swift in Sources */,
+				F4488B5523438C7600FBEC6F /* MapInput.swift in Sources */,
 				4C7584E6224E860000DA2195 /* UIStoryboard+StoryboardInitializing.swift in Sources */,
 				4CDF571C224E91EF00C54CCD /* Constants.swift in Sources */,
 				F40A898123423711003F27B3 /* ProjectView.swift in Sources */,
@@ -663,7 +667,7 @@
 				F42F743722F5C14700E9FF61 /* RequestCreatable.swift in Sources */,
 				703340EE22CE4EC5001BCB4C /* MainViewControllerCoordinator.swift in Sources */,
 				F42F743322F5C02900E9FF61 /* HTTPMethod.swift in Sources */,
-				4CE1ADF42252AA51005AC27E /* MapViewModel.swift in Sources */,
+				4CE1ADF42252AA51005AC27E /* MapPresenter.swift in Sources */,
 				F434A5BC23424656009A6BE5 /* MapsService.swift in Sources */,
 				F4488B4E2343877300FBEC6F /* DateFormatter+CurrentTime.swift in Sources */,
 				F42F742C22F4B33700E9FF61 /* CustomeRequest.swift in Sources */,

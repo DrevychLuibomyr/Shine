@@ -92,10 +92,11 @@ final class InfoViewController: UIViewController {
     }
     
     private func showInfoView() {
-        UIView.animate(withDuration: 0.6, animations: { [weak self] in
-            let frame = self?.view.frame
-            let yComponent = self?.partialView
-            self?.view.frame = CGRect(x: 0, y: yComponent!, width: frame!.width, height: frame!.height)
+        UIView.animate(withDuration: 0.6, animations: { [unowned self] in
+            self.view.frame = CGRect(x: 0,
+                                     y: self.partialView,
+                                     width: self.view.frame.width,
+                                     height: self.view.frame.height)
         })
     }
 }

@@ -55,6 +55,7 @@ extension GoogleMapsPresenter: GoogleMapsPresenterInterface {
                     switch model {
                     case .success(let data, _):
                         self?.view?.updateViews(with: data)
+                        print(data)
                     case .failure(let error):
                         guard let strongSelf = self else { return }
                         strongSelf.view?.didRecieve(error.errorDescription)

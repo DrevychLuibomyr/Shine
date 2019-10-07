@@ -13,7 +13,7 @@ protocol NetworkServiceProtocol {
     func send(request: RequestCreatable, latitude: CLLocationDegrees, longitute: CLLocationDegrees, complition: @escaping ((NetworkResult) -> Void))
 }
 
-internal enum NetworkResult {
+enum NetworkResult {
     case success(data: SunriseSunset, headers: [String:String])
     case failure(error: NetworkError)
 }
@@ -21,12 +21,6 @@ internal enum NetworkResult {
 final class NetworkManager {
     
     private let session: URLSession
-    
-    var decoder: JSONDecoder {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
-    }
     
     init(timeout: TimeInterval = 15.second) {
         let sessionConfiguration = URLSessionConfiguration.default
@@ -45,7 +39,7 @@ extension NetworkManager: NetworkServiceProtocol {
             return
         }
         
-        let task = session.dataTask(with: urlRequest) { [unowned self] (data, response, error) in
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
             guard let response = response as? HTTPURLResponse else {
                 complition(.failure(error: .generalFailure))
                 return
@@ -58,14 +52,14 @@ extension NetworkManager: NetworkServiceProtocol {
                     return
                 }
                 
-                guard let models = try? self.decoder.decode(SunriseSunset.self, from: data) else {
-                    complition(.failure(error: .couldNotParseJSON(info: "Check SunsetSunrise Model")))
+                guard let model = try? JSONDecoder().decode(SunriseSunset.self, from: data) else {
+                    complition(.failure(error: .couldNotParseJSON(info: "Check Model")))
                     return
                 }
                 
                 let headers: [String : String] = (response.allHeaderFields as? [String : String] ?? [:])
                 DispatchQueue.main.async {
-                    complition(.success(data: models, headers: headers))
+                    complition(.success(data: model, headers: headers))
                 }
                 
             case 400...404:
