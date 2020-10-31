@@ -24,6 +24,7 @@ final class MapViewController: UIViewController {
     //MARK: - ViewController life-cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.getDataFromUserLocation()
         presenter.requestPermissionForLocation()
         addInfroViewController()
     }
@@ -75,7 +76,7 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
     }
     
     final func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        print("ERROR AUTO COMPLETE \(error)")
+        print(" ERROR AUTO COMPLETE \(error)")
     }
     
     final func wasCancelled(_ viewController: GMSAutocompleteViewController) {

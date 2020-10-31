@@ -17,9 +17,11 @@ final class ProjectView: UIView {
     //MARK: - Properties
     weak var delegate: ProjectViewDelegate?
 
+    //MARK: - Views
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var quitButton: UIButton!
     
+    //MARK: - Constructor
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -30,7 +32,7 @@ final class ProjectView: UIView {
         setupView()
     }
     
-    //MARK: - Private 
+    //MARK: - Private
     private func setupView() {
         Bundle.main.loadNibNamed("ProjectViewInfo", owner: self, options: nil)
         quitButton.setTitle(ProjectInfoViewConstatns.exitButton, for: .normal)

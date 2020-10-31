@@ -5,7 +5,6 @@
 //  Created by Luybckyk Drevych on 7/29/19.
 //  Copyright © 2019 Luybckyk Drevych. All rights reserved.
 //
-
 import Foundation
 
 //MARK: Int+TimeInterval
