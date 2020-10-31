@@ -23,6 +23,8 @@ extension Int {
 }
 
 //MARK: Double+TimeInterval for Network
+
+
 extension Double {
     public var second: TimeInterval       { return self }
     public var seconds: TimeInterval      { return self }
