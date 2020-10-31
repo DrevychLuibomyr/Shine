@@ -22,6 +22,7 @@ extension Int {
     public var days: TimeInterval         { return Double(self) * 3600 * 24 }
 }
 
+
 //MARK: Double+TimeInterval
 extension Double {
     public var second: TimeInterval       { return self }
