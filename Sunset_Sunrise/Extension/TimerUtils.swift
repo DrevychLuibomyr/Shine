@@ -22,10 +22,13 @@ extension Int {
     public var days: TimeInterval         { return Double(self) * 3600 * 24 }
 }
 
+
 //MARK: Double+TimeInterval for Network
 extension Double {
     public var second: TimeInterval       { return self }
     public var seconds: TimeInterval      { return self }
+    public var seconds: TimeInterval      { return self }
+
     
     public var minute: TimeInterval       { return self * 60 }
     public var minutes: TimeInterval      { return self * 60 }
