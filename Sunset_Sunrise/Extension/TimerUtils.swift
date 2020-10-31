@@ -27,6 +27,8 @@ extension Int {
 extension Double {
     public var second: TimeInterval       { return self }
     public var seconds: TimeInterval      { return self }
+    public var seconds: TimeInterval      { return self }
+
     
     public var minute: TimeInterval       { return self * 60 }
     public var minutes: TimeInterval      { return self * 60 }
