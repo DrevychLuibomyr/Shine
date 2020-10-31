@@ -7,7 +7,7 @@
 //
 import Foundation
 
-//MARK: Int+TimeInterval
+//MARK: Int+TimeInterval for network
 extension Int {
     public var second: TimeInterval       { return Double(self) }
     public var seconds: TimeInterval      { return Double(self) }
@@ -22,7 +22,8 @@ extension Int {
     public var days: TimeInterval         { return Double(self) * 3600 * 24 }
 }
 
-//MARK: Double+TimeInterval
+
+//MARK: Double+TimeInterval for Network
 extension Double {
     public var second: TimeInterval       { return self }
     public var seconds: TimeInterval      { return self }
